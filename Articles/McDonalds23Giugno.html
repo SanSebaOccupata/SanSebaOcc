@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.3">
+        <link rel="stylesheet" href="../style.css">
+        <style>
+            .content {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 20px;
+            }
+    
+            .sidebar, .article-main {
+                background-color: #ffffff;
+                color: black;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+            }
+    
+            .sidebar {
+                background-image: url('../Images/comunicazioni-sidebar.jpg');
+                background-size: cover;
+                background-position: center;
+                position: relative;
+                color: white;
+                width: 700%;
+            }
+    
+            .sidebar::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(51, 51, 51, 0.6), rgba(51, 51, 51, 0.4), rgba(51, 51, 51, 0.2), rgba(51, 51, 51, 0));
+                border-radius: 10px;
+                z-index: 1;
+            }
+    
+            .sidebar h3, .sidebar ul {
+                position: relative;
+                z-index: 2;
+            }
+    
+            .sidebar h3 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+    
+            .sidebar ul {
+                list-style: none;
+                padding: 0;
+            }
+    
+            .sidebar ul li {
+                margin-bottom: 10px;
+            }
+    
+            .sidebar ul li a {
+                color: #009736;
+                text-decoration: none;
+            }
+    
+            .sidebar ul li a:hover {
+                text-decoration: underline;
+            }
+    
+            .article-main {
+                width: 100%;
+            }
+    
+            .article-main h1 {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+    
+            .article-main img {
+                width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+                border-radius: 10px;
+            }
+    
+            .article-main h2 {
+                font-size: 24px;
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+    
+            .article-main p {
+                font-size: 18px;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+    
+            @media screen and (min-width: 768px) {
+                .sidebar {
+                    width: 100%;
+                    margin-right: 0px;
+                }
+    
+                .article-main {
+                    width: 100%;
+                }
+            }
+    
+            @media screen and (max-width: 768px) {
+                .sidebar, .article-main {
+                    width: 100%;
+                }
+            }
+    
+            .homepage-body {
+                background-image: url('Images/sughero.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                color: #fff; /* White text color */
+            }
+    
+            .loading-container {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 9999;
+            }
+    
+            .loading {
+                width: 100px;
+                height: auto;
+                animation: spin 2s linear infinite;
+            }
+    
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+    
+            .menu {
+                display: flex;
+                justify-content: center;
+                background-color: #EE2A35;
+                padding: 10px;
+            }
+    
+            .nav-item {
+                padding: 5px 10px;
+                margin: 0 5px;
+                border-radius: 5px;
+            }
+    
+            .nav-item a {
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
+                transition: background-color 0.3s;
+            }
+    
+            .nav-item:hover {
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body class="homepage-body">
+        <div class="loading-container">
+            <img src="../Images/Anguria.png" alt="Loading" class="loading">
+        </div>
+        <nav>
+                <img src="../Images/Logo.jpg" alt="Logo">
+        </nav>
+        <nav class="menu">
+            <div class="nav-item">
+                <a href="../index.html">Home</a>
+            </div>
+            <div class="nav-item">
+                <a href="../chisiamo.html">Chi Siamo</a>
+            </div>
+            <div class="nav-item">
+                <a href="../comunicazioni.html">Comunicazioni</a>
+            </div>
+            <div class="nav-item">
+                <a href="../articles.html">Articoli</a>
+            </div>
+            <div class="nav-item">
+                <a href="../map.html">Mappa</a> 
+            </div>
+        </nav>
+    <div class="content">
+        <aside class="sidebar">
+            <h3>Articoli Correlati</h3>
+            <ul>
+                <li><a href="Comunicazioni/Com20Giugno.html">Corteo per la Palestina!</a></li>
+                <li><a href="article3.html">Voci dalla Palestina</a></li>
+                <li><a href="article4.html">La Risposta Internazionale</a></li>
+            </ul>
+        </aside>
+        <main class="article-main">
+            <h1>
+                McDonald's ed Israele
+            </h1>
+<p>McDonalds è, come molti sapranno, un’industria multinazionale direttamente responsabile dell'espropriazione di risorse di altri Paesi. McDonalds sgombera le piccole fattorie e obbliga la popolazione locale a trasformare la produzione da cibo per la sussistenza interna a cereali destinati all’esportazione e all’uso di mangimi per animali dell’industria della carne, lasciando povertà e fame nei territori in cui si insedia. Inoltre, il prodotto finale che viene servito è intriso di elementi tossici, dannosi per la salute di chi li consuma; basti pensare che, per raggiungere un colore e gusto delle foglie di lattuga omogeneo in tutti gli stabilimenti di McDonald's, vengono applicati fino a venti diversi prodotti chimici, che vengono assorbiti e poi ingeriti dai consumatori. McDonald's, è conosciuto anche per lo sfruttamento de* su* lavorator*: bassi salari, orari di lavoro massacranti e poco rispetto delle regole di tutela dell’ambiente e dei dipendenti. Infine, è notizia dell’anno scorso che negli Stati Uniti sono stati scoperti due bambini di 10 anni che lavorano non pagati in uno stabilimento del Kentucky.</p>
+<p>Perché boicottare McDonald’s? Il boicottaggio è una forma di resistenza nonviolenta che si pratica per isolare a livello sociale, sottrarre consenso a livello politico o danneggiare a livello economico persone, aziende o istituzioni responsabili di comportamenti illegittimi.</p>
+<p>Nei Territori Occupati della Palestina, il Movimento BDS (Boicottaggio, Disinvestimento, Sanzioni) opera dal 2005 con lo scopo di fermare il supporto internazione fornito ad Israele per indebolire il monopolio sul territorio e contrastare le pratiche di colonizzazione e Apartheid in corso dal 1948, creando allo stesso tempo consapevolezza su come Israele opprime il popolo Palestinese.</p>
+<p>McDonald’s è entrata a fare parte dei target principali del boicottaggio dopo che una delle sue sedi in Israele ha offerto pasti gratuiti ai militari occupanti, che portano avanti le brutali azioni di distruzione e genocidio nei territori Palestinesi; questa relazione con una delle aziende che partecipa alla produzione e al consumo di carne tra i più alti al mondo non fa altro che mostrare la totale contraddizione che caratterizza lo stato illegittimo di Israele, il quale si professa essere il “più vegano al mondo”, promuovendo eventi nazionali come il “Meatless Monday”, in cui la carne non viene servita nelle mense statali, o dando la possibilità ai soldati vegani israeliani di indossare stivali e berretti di fibre vegetali al posto di quelli stadard in pelle, tutto ciò mentre porta avanti politiche di Apartheid e colonizazzione su un territorio occupato e privato di ogni risorsa. Il double-standard di Israele sulla questione di diritti animali non si ferma a questi accordi con McDonald’s, ma la controversia si diffonde anche nell’industria casearia, dove la manipolazione genetica dei bovini continua ininterrotta dagli anni ‘30 e le pratiche di inseminazione artificiale vengono applicate al 95% del bestiame, solo per incrementare la produzione e vendita di latte di un paese che si professa essere "pioniere nella difesa dei diritti animali”.</p>
+<p>Il boicottaggio continua e lascia il segno, dato che questo è il primo anno dal 2020 in cui le vendite internazionali di McDonald’s sono calate invece che aumentare.</p>
+<p>Anche noi, come studentə per la Palestina libera, ci impegniamo a partecipare al boicottaggio, non solo a livello di cittadinə, ma anche e soprattutto partendo dalle università, luoghi che attraversiamo quotidianamente. Abbiamo e continueremo a pretendere a gran voce l'interruzione di tutti gli accordi dell’Università Ca’ Foscari con le università israeliane, il riconoscimento del genocidio in atto da parte del governo israeliano e le dimissioni della rettrice Tiziana Lippiello dal suo ruolo di rettrice o dal suo ruolo all’interno del comitato scientifico di Med-Or.</p>
+            </main>
+    </div>
+    <footer>
+        <p>"Bellum tibi Palestina" Unive finanzia il genocidio</p>
+    </footer>
+</body>
+</html>
