@@ -224,7 +224,7 @@
                 .then(response => response.json())
                 .then(data => {
                     data.sort((a, b) => new Date(b.date) - new Date(a.date));
-                    const latestArticles = data.slice(0, 4);
+                    const latestArticles = data.slice(0, 3);
                     const articlesContainer = document.getElementById('articles');
                     latestArticles.forEach(article => {
                         const articleElement = document.createElement('div');
