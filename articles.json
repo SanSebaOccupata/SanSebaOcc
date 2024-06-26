@@ -86,7 +86,7 @@
         "date": "2024-06-26",
         "link": "Articles/Boicottaggio26Giugno.html"
     }
-        ,
+    ,
     {
         "title": "Ingerenza dei Privati",
         "image": "Images/IngerenzaPrivati.jpg",
@@ -94,5 +94,12 @@
         "date": "2024-06-26",
         "link": "Articles/IngerenzaPrivati.html"
     }
-
+    ,
+    {
+        "title": "Il Genocidio",
+        "image": "Images/Genocidio26Giugno.jpg",
+        "description": "Più che di un minuto di silenzio, i palestinesi hanno bisogno che urliamo a gran voce la loro tragedia e le ingiustizie che subiscono, perché qualcuno intervenga",
+        "date": "2024-06-26",
+        "link": "Articles/Genocidio26Giugno.html"
+    }
 ]
