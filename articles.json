@@ -46,4 +46,13 @@
         "date": "2024-05-31",
         "link": "Articles/HaifaUni.html"
     }
+    ,
+    {
+        "title": "Tel Aviv University",
+        "image": "Images/TelAvivUni.jpg",
+        "description": "Gli organi della ricerca diventano un ingranaggio nel problematico trattamento dei palestinesi: Tel Aviv University.",
+        "date": "2024-05-31",
+        "link": "Articles/TAU.html"
+    }
+    ,
 ]
