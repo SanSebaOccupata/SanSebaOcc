@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .menu {
+            display: flex;
+            justify-content: center;
+            background-color: #EE2A35;
+            padding: 10px;
+        }
+
+        .nav-item {
+            padding: 5px 10px;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+
+        .nav-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-item:hover {
+            background-color: black;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .sidebar, .article-main {
+            background-color: #ffffff;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 97%;
+        }
+
+        .sidebar {
+            background-image: url('../Images/article-sidebar.webp');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+        }
+
+        .sidebar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(51, 51, 51, 0.6), rgba(51, 51, 51, 0.4), rgba(51, 51, 51, 0.2), rgba(51, 51, 51, 0));
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        .sidebar h3, .sidebar ul {
+            position: relative;
+            z-index: 2;
+        }
+
+        .sidebar h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            color: #009736;
+            text-decoration: none;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .article-main h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .article-main img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .article-main h2 {
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .article-main p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        @media screen and (min-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .sidebar, .article-main {
+                width: 97%;
+            }
+
+            .sidebar:last-child {
+                margin-right: 0;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .sidebar, .article-main {
+                width: 90%;
+            }
+        }
+
+        .homepage-body {
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .loading-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body class="homepage-body">
+    <nav>
+        <img src="../Images/Logo.jpg" alt="Logo">
+    </nav>
+    <nav class="menu">
+        <div class="nav-item">
+            <a href="../index.html">Home</a>
+        </div>
+        <div class="nav-item">
+            <a href="../chisiamo.html">Chi Siamo</a>
+        </div>
+        <div class="nav-item">
+            <a href="../comunicazioni.html">Comunicazioni</a>
+        </div>
+        <div class="nav-item">
+            <a href="../articles.html">Articoli</a>
+        </div>
+        <div class="nav-item">
+            <a href="../map.html">Mappa</a>
+        </div>
+    </nav>
+    <div class="content">
+        <aside class="sidebar">
+            <h3>Articoli Correlati</h3>
+            <ul>
+                <li><a href="Comunicazioni/Com20Giugno.html">Corteo per la Palestina!</a></li>
+                <li><a href="Comunicazioni/Credi20Giugno.html">Voci dalla Palestina</a></li>
+                <li><a href="article4.html">La Risposta Internazionale</a></li>
+            </ul>
+        </aside>
+        <main class="article-main">
+            <h1>
+                Haifa University
+            </h1>
+<p>L’Università di Haifa è stata fondata nel 1963 nell’omonima città, casa di una delle più fitte comunità di palestinesi in Israele; e proprio all’asservimento e all’annichilimento di questi stessi palestinesi ha rivolto gran parte dei suoi sforzi; come riporta Maya Wind nel suo Torri d’avorio e d’acciaio, essa risulta una delle istituzioni che più ha contribuito alla ritraduzione della Galilea in un territorio eminentemente “ebraico”, attraverso progetti di insediamento territoriale di stampo coloniale. A tal proposito, si guardi per esempio il fatto che in essa trovi sede lo Zinman Institute of Archaeology, uno dei più importanti centri archeologici del Paese, mediante il quale Israele si è spesso reso promotore di numerosissimi progetti di scavi archeologici volti ad appropriarsi, col conclamato fine di soffocarle, delle identità storica, culturale e territoriale del popolo palestinese.</p>
+<p>L’Università di Haifa, nello specifico.</p>
+<ul>Ha portato avanti, con il Dipartimento dello Zinman Institute, un numero indecifrabile di campagne di scavo e iniziative nella cosiddetta “Città di David”, sita nella Gerusalemme occupata, che Israele ha unilateralmente definito: “eredità ebrea” nel 1974; da quel momento il sito è stato svuotato di ogni possibile rimando legato al suo passato palestinese, ed è stato trasformato in un parco da fare visitare ai turisti e agli stessi studenti.</ul>
+<ul>È sede del National Security Studies Center (NSCC), un dipartimento interamente dedicato all’istruzione militare sui temi relativi alla sicurezza nazionale, che su sua stessa ammissione “si focalizza sul conflitto israelo-palestinese”[4]. Proprio tra le mura dell’NSCC sono stati partoriti paper scientifici relativi alla “etica nel combattere il terrorismo”, tra cui quello redatto a quattro mani da Asa Kasher e Amos Yadlin, che è presto finito per diventare un vero e proprio manuale di repressione per la stessa istituzione statale israeliana.</ul>
+<ul>Sempre sul fronte della collaborazione con l’universo militare, non si può non sottolineare come l’Università di Haifa sia sede di altri due diversi “college militari” di formazione superiore dedicati interamente alle IDF. Essa è inoltre stata sede del programma Havatzalot per anni: questo è un programma d’élite per la formazione dell’intelligence militare, volto a sfornare alti dirigenti dell’esercito israeliano.</ul>
+            </main>
+    </div>
+    <footer>
+    <p>"Bellum tibi Palestina" - Unive sostiene il genocidio</p>
+    </footer>
+</body>
+</html>
