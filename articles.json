@@ -30,6 +30,7 @@
         "date": "2024-06-24",
         "link": "Articles/McDonalds23Giugno.html"
     }
+    ,
        {
         "title": "Ca' Foscari e Fincantieri",
         "image": "Images/FoscFin.jpg",
@@ -37,6 +38,7 @@
         "date": "2024-05-31",
         "link": "Articles/FoscariFincantieri26Giugno.html"
     }
+    ,
            {
         "title": "Haifa University",
         "image": "Images/Haifa.jpg",
@@ -44,5 +46,4 @@
         "date": "2024-05-31",
         "link": "Articles/HaifaUni.html"
     }
-    ,
 ]
