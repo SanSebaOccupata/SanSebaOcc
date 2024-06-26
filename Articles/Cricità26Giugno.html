@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .menu {
+            display: flex;
+            justify-content: center;
+            background-color: #EE2A35;
+            padding: 10px;
+        }
+
+        .nav-item {
+            padding: 5px 10px;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+
+        .nav-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-item:hover {
+            background-color: black;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .sidebar, .article-main {
+            background-color: #ffffff;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 97%;
+        }
+
+        .sidebar {
+            background-image: url('../Images/article-sidebar.webp');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+        }
+
+        .sidebar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(51, 51, 51, 0.6), rgba(51, 51, 51, 0.4), rgba(51, 51, 51, 0.2), rgba(51, 51, 51, 0));
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        .sidebar h3, .sidebar ul {
+            position: relative;
+            z-index: 2;
+        }
+
+        .sidebar h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            color: #009736;
+            text-decoration: none;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .article-main h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .article-main img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .article-main h2 {
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .article-main p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        @media screen and (min-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .sidebar, .article-main {
+                width: 97%;
+            }
+
+            .sidebar:last-child {
+                margin-right: 0;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .sidebar, .article-main {
+                width: 90%;
+            }
+        }
+
+        .homepage-body {
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .loading-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body class="homepage-body">
+    <nav>
+        <img src="../Images/Logo.jpg" alt="Logo">
+    </nav>
+    <nav class="menu">
+        <div class="nav-item">
+            <a href="../index.html">Home</a>
+        </div>
+        <div class="nav-item">
+            <a href="../chisiamo.html">Chi Siamo</a>
+        </div>
+        <div class="nav-item">
+            <a href="../comunicazioni.html">Comunicazioni</a>
+        </div>
+        <div class="nav-item">
+            <a href="../articles.html">Articoli</a>
+        </div>
+        <div class="nav-item">
+            <a href="../map.html">Mappa</a>
+        </div>
+    </nav>
+    <div class="content">
+        <aside class="sidebar">
+            <h3>Articoli Correlati</h3>
+            <ul>
+                <li><a href="Comunicazioni/Com20Giugno.html">Corteo per la Palestina!</a></li>
+                <li><a href="Comunicazioni/Credi20Giugno.html">Voci dalla Palestina</a></li>
+                <li><a href="article4.html">La Risposta Internazionale</a></li>
+            </ul>
+        </aside>
+        <main class="article-main">
+            <h1>
+                CRITICITA' DELL'ASSEMBLEA
+            </h1>
+<p>Riteniamo necessario far presente quanto problematica sia l’organizzazione stessa dell’incontro di oggi, le cui premesse crediamo impediscono una discussione diretta è realmente democratica che implichi un dialogo tra governance e studenti.
+Ci è stata concessa questa assemblea più di un mese fa, in seguito alla pressante mobilitazione studentesca che si è presentata in presidio a Ca Foscari centrale lo scorso 22 maggio. Ribadiamo in primis la problematicità di data e luogo in cui questa assemblea si sta svolgendo.</p>
+<p>Riscontriamo una serie di lacune organizzative che dovrebbero  come la mancanza di un ordine del giorno e di una restituzione concreta prevista rispetto ai temi da discutere. Si è venuta a creare una forte disparità rappresentativa in quella che, secondo la Rettrice, vuole essere un’assemblea più partecipata possibile. (considerato l’invito mandato dal capo di dipartimenti di scienze ambientali Salvatore Orlando ai suoi studenti e colleghi, nel quale incentiva una prenotazione di massa da parte del suo dipartimento per “far fronte alle voci meno popolari”, abbiamo motivo di pensare che questa disparità rappresentativa non sia un incidente).</p> 
+<p>A questo punto vale la pena mettere in dubbio la governance d’ateneo nella sua capacità di sostenere un dialogo ampio e orizzontale con la componente studentesca e con il pta riguardo alle sue stesse scelte politiche e finanziarie. La mobilitazione studentesca in solidarietà al popolo palestinese, da cui nasce questo stesso intervento, non ha ancora una dimostrazione chiara dell’efficenza dei paradigmi accademici nella costruzione di un reale confronto sugli accordi tra Ca’ Foscari e i vari organi che finanziano lo stato genocida di Israele. Infatti l’incontro di oggi prendpiù la forma di una conferenza che di un'assemblea.</p> 
+<p>Vorrei concludere con una domanda alla rettrice stessa. Premesso che questa non è stata e non sarà l’unica istanza di dialogo assembleare fra la governance e la componente studentesca, come abbiamo intenzione di organizzare questo tipo di incontro in futuro? Le vie istituzionali e accademiche che adottiamo oggi saranno mai sufficienti a incontrare le ambizioni democratiche espresse più e più volte dalla rettrice? </p>
+    </div>
+    <footer>
+    <p>"Bellum tibi Palestina" - Unive sostiene il genocidio</p>
+    </footer>
+</body>
+</html>
