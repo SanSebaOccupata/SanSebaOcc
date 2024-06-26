@@ -74,7 +74,7 @@
                     const articlesContainer = document.getElementById('articles');
                     latestArticles.forEach(article => {
                         const articleElement = document.createElement('div');
-                        const latestArticles = data.slice(0, 10);
+                        const latestArticles = data.slice(0, 4);
                         articleElement.className = 'article-box';
                         articleElement.innerHTML = `
                             <a href="${article.link}">
