@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .menu {
+            display: flex;
+            justify-content: center;
+            background-color: #EE2A35;
+            padding: 10px;
+        }
+
+        .nav-item {
+            padding: 5px 10px;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+
+        .nav-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-item:hover {
+            background-color: black;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .sidebar, .article-main {
+            background-color: #ffffff;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 97%;
+        }
+
+        .sidebar {
+            background-image: url('../Images/article-sidebar.webp');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+        }
+
+        .sidebar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(51, 51, 51, 0.6), rgba(51, 51, 51, 0.4), rgba(51, 51, 51, 0.2), rgba(51, 51, 51, 0));
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        .sidebar h3, .sidebar ul {
+            position: relative;
+            z-index: 2;
+        }
+
+        .sidebar h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            color: #009736;
+            text-decoration: none;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .article-main h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .article-main img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .article-main h2 {
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .article-main p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        @media screen and (min-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .sidebar, .article-main {
+                width: 97%;
+            }
+
+            .sidebar:last-child {
+                margin-right: 0;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .sidebar, .article-main {
+                width: 90%;
+            }
+        }
+
+        .homepage-body {
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .loading-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body class="homepage-body">
+    <nav>
+        <img src="../Images/Logo.jpg" alt="Logo">
+    </nav>
+    <nav class="menu">
+        <div class="nav-item">
+            <a href="../index.html">Home</a>
+        </div>
+        <div class="nav-item">
+            <a href="../chisiamo.html">Chi Siamo</a>
+        </div>
+        <div class="nav-item">
+            <a href="../comunicazioni.html">Comunicazioni</a>
+        </div>
+        <div class="nav-item">
+            <a href="../articles.html">Articoli</a>
+        </div>
+        <div class="nav-item">
+            <a href="../map.html">Mappa</a>
+        </div>
+    </nav>
+    <div class="content">
+        <aside class="sidebar">
+            <h3>Articoli Correlati</h3>
+            <ul>
+                <li><a href="Comunicazioni/Com20Giugno.html">Corteo per la Palestina!</a></li>
+                <li><a href="Comunicazioni/Credi20Giugno.html">Voci dalla Palestina</a></li>
+                <li><a href="article4.html">La Risposta Internazionale</a></li>
+            </ul>
+        </aside>
+        <main class="article-main">
+            <h1>
+                PRIVATI IN UNIVERSITA'
+            </h1>
+<p>Mi accodo alla critica metodologica di questa assemblea fatta prima di me, e ribadisco che questo intervento è frutto dell’elaborazione collettiva delle studenti in mobilitazione per la Palestina libera.</p> 
+<p>Vorrei porre l’attenzione su alcuni dei privati con cui la nostra università intrattiene dei rapporti. Prime fra tutte Eni e Credit Agricole, che hanno legami con lo stato genocida di Israele. Eni SpA risulta la 30esima tra le 100 aziende che hanno causato il 71% delle emissioni di CO2 a livello globale. È il maggiore emettitore italiano di gas serra a livello mondiale. La multinazionale porta avanti chiari esempi di modelli neocoloniali, in cui l’accumulazione estrattivista avviene attraverso una predazione ambientale, creando meccanismi di dipendenza, di degradazione ambientale e degradazione socio-economica. Eni si è radicato all’interno dell’istruzione superiore e dentro le università  in modo sistemico e capillare, in un’operazione di autopromozione di paladino della sostenibilità  e transizione energetica. Nelle università Eni opera attraverso accordi e convenzioni per i tirocini, sovvenzioni a master e corsi di laurea, finanziamenti a bandi di ricerca e dottorati. Nel caso di Ca’ Foscari Eni è presente in un dottorato in Scienza e gestione dei cambiamenti climatici e nelle collaborazioni dirette con sue sottobranche come Eni Rewind Spa o la Fondazione Eni Enrico Mattei. L’impatto di queste società estrattive nel sud del mondo è devastante, hanno in primis degli effetti sulle popolazioni che le subiscono senza avere nessuno strumento di negoziazione. Tuttavia, gli impatti dei progetti sulle persone e sull’ambiente sono iniziati prima ancora che il gas cominciasse a fluire: inquinamento, pratiche impattanti di esplorazione, accaparramento di terre, espropriazione e delocalizzazione degli abitanti, promesse di risarcimento non mantenute, programmi di reinsediamento falliti e militarizzazione. Ci troviamo di fronte a chiari esempi di modelli neocoloniali, in cui l’accumulazione estrattivista avviene attraverso una predazione ambientale, creando meccanismi neocoloniali di dipendenza, di degradazione ambientale e socio-economica.</p>
+<p>Nel settembre del 2000 venne scoperta Gaza Marine. I giacimenti vennero occupati dal governo israeliano. A oggi gli abitanti della Striscia non hanno nessun controllo sul giacimento. Negli anni successivi furono trovati altri due enormi giacimenti off shore: il Tamar e il Leviathan. L’occupazione e il colonialismo israeliano in Palestina è quindi strettamente connesso alla presenza di queste risorse e al ruolo che Israele vuole ottenere come uno dei principali esportatori di gas verso l’Europa.  Per quanto riguarda i rapporti con l’Italia, a marzo 2023 Netanyahu, in un incontro con Giorgia Meloni, ha ribadito il proprio sostegno all’Italia nella fornitura di Gas, e oggi il governo italiano si è espresso alleato di Israele.  A febbraio 2024 la convenzione con Eni è stata dichiarata illegittima, per violazione del diritto internazionale secondo cui le risorse devono appartenere all autorità  palestinese. Tuttavia la multinazionale del fossile rimane una delle principali interlocutrici con Israele in campo energetico.</p>
+<h2>
+CREDIT AGRICOLE
+<h2>
+<p>Il nostro ateneo poi collabora con credit agricole, seconda per investimenti a livello europeo in attività che sfruttano i Territori palestinesi occupati.
+La coalizione internazionale “Don’t Buy into Occupation” (DBIO), indaga le relazioni finanziare tra le imprese coinvolte nell’illecita occupazione israeliana nei Territori Palestinesi Occupati (OPT) e le Istituzioni finanziarie Europee (Fis), nella consapevolezza che l’azione Israeliana è illegale secondo la legge internazionale.
+Nonostante ciò, Crédit Agricole già ad agosto 2023 aveva investito oltre 11.215 miliardi di dollari proprio in queste aziende. Dalla Collaborazione nascono i Badge indispensabili a student3 ca’ foscari per attività  universitarie come l’accesso ai servizi bibliotecari, l’identificazione formale in sede istituzionale e l’accredito di borse di studio e rimborsi spese. Tutt3 student3 in diritto di ricevere contributi economici tramite gli organi univeristari sono pertanto obbligati ad aprire un conto con Credit Agricole. In questo modo l’università ci porta a contribuire alla costituzione del capitale della banca, inserendosi nel giro di denaro che viene poi reinvestito, e che rende le imprese identificate dall’indagine complici delle gravi violazioni della legge umanitaria internazionale. In un contesto in cui aumentano i finanziamenti privati alle università, troviamo inaccettabile che l'ente finanziario scelto dalla nostra università sia proprio una banca devastatrice come Credit Agricole.
+Ci chiediamo, come si fa a parlare di sostenibilità ambientale e libertà della ricerca con queste catene green attorno a ricerca e didattica?</p>
+    </div>
+    <footer>
+    <p>"Bellum tibi Palestina" - Unive sostiene il genocidio</p>
+    </footer>
+</body>
+</html>
