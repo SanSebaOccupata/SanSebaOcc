@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .menu {
+            display: flex;
+            justify-content: center;
+            background-color: #EE2A35;
+            padding: 10px;
+        }
+
+        .nav-item {
+            padding: 5px 10px;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+
+        .nav-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-item:hover {
+            background-color: black;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .sidebar, .article-main {
+            background-color: #ffffff;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 97%;
+        }
+
+        .sidebar {
+            background-image: url('../Images/article-sidebar.webp');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+        }
+
+        .sidebar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(51, 51, 51, 0.6), rgba(51, 51, 51, 0.4), rgba(51, 51, 51, 0.2), rgba(51, 51, 51, 0));
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        .sidebar h3, .sidebar ul {
+            position: relative;
+            z-index: 2;
+        }
+
+        .sidebar h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            color: #009736;
+            text-decoration: none;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .article-main h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .article-main img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .article-main h2 {
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .article-main p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        @media screen and (min-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .sidebar, .article-main {
+                width: 97%;
+            }
+
+            .sidebar:last-child {
+                margin-right: 0;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .sidebar, .article-main {
+                width: 90%;
+            }
+        }
+
+        .homepage-body {
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .loading-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body class="homepage-body">
+    <nav>
+        <img src="../Images/Logo.jpg" alt="Logo">
+    </nav>
+    <nav class="menu">
+        <div class="nav-item">
+            <a href="../index.html">Home</a>
+        </div>
+        <div class="nav-item">
+            <a href="../chisiamo.html">Chi Siamo</a>
+        </div>
+        <div class="nav-item">
+            <a href="../comunicazioni.html">Comunicazioni</a>
+        </div>
+        <div class="nav-item">
+            <a href="../articles.html">Articoli</a>
+        </div>
+        <div class="nav-item">
+            <a href="../map.html">Mappa</a>
+        </div>
+    </nav>
+    <div class="content">
+        <aside class="sidebar">
+            <h3>Articoli Correlati</h3>
+            <ul>
+                <li><a href="Comunicazioni/Com20Giugno.html">Corteo per la Palestina!</a></li>
+                <li><a href="Comunicazioni/Credi20Giugno.html">Voci dalla Palestina</a></li>
+                <li><a href="article4.html">La Risposta Internazionale</a></li>
+            </ul>
+        </aside>
+        <main class="article-main">
+            <h1>PROSPETTIVA NAZIONALE E RUOLO DELL'UNIVERSITA'</h1>
+            <p>Come può l’università non essere complice del genocidio in Palestina? A 8 mesi dall’inizio del genocidio l’unica posizione che il nostro senato accademico il 22 maggio, e la seduta della CRUI il 23, sono riusciti a prendere in risposta a una partecipatissima e capillare mobilitazione nazionale, è stata una generica richiesta di cessate il fuoco.
+Partendo dal ricordare che le Nazioni Unite avevano già approvato tale richiesta il 25 marzo scorso, ci sembra evidente che sempre più istituzioni, di fronte all’assurdità di quanto sta accadendo a Rafah, stiano prendendo tale posizione pubblica perché ormai incapaci di giustificare il loro silenzio, e pensando di poter essere così risparmiate dall’inevitabile giudizio che la storia avrà di coloro che hanno finto di non vedere. Siamo profondamente disgustati da questo tentativo di lavarsi la coscienza, non tanto perché non ci sentiamo ascoltati, quanto più perché riteniamo aberrante, di fronte a 76 anni di occupazione coloniale nascondersi solo dietro al disastro umano e morale che l’invasione di Rafah rappresenta.</p>
+<p>Come già detto la nostra università è colpevole di stringere accordi con aziende, che siano quelle dell’apparato bellico o quelle che massacrano territori ed ecosistemi, per profitto. Anni di progressivo allontanamento degli intellettuali e dei professori, che attraversano le mura di questa istituzione, dalle proteste che la riguardano, unito all’inettitudine della sua classe dirigente, la portano a elemosinare fondi da queste aziende piuttosto che a pretenderli dai governi che negli anni continuano a fare tagli a istruzione e ricerca.</p>
+<p>Questo porta inevitabilmente al venir meno dell’autonomia decisionale degli atenei, valore riconosciuto dall’articolo 33 della nostra costituzione: l’università dovrebbe rimanere indipendente da interessi privati e linee politiche governative in quanto luogo di formazione critico del sapere. Gli interessi di industrie come Leonardo, Fincantieri, Eni e Credit Agricole non sono compatibili con quello che dovrebbe essere il fine ultimo dell’istituzione universitaria. Altrettanto inaccettabili sono i rapporti tra gli atenei e i ministeri della difesa e degli interni, che sono evidente espressione politica del governo Meloni, la peggiore classe padronale post-fascista ed atlantista di questo paese.</p>
+<p>Non ci illudiamo infatti che si possa addossare tutta la colpa di questi fatti a quei pennivendoli che siedono alla guida delle dirigenze accademiche e, purtroppo, spesso anche dietro le cattedre delle nostre università. Questo è infatti l’apparato di formazione di un sistema produttivo, e di sfruttamento, ben più ampio: è questo sistema, e i governi dei paesi che ne fanno parte, ad essere il chiaro obiettivo delle istanze degli studenti che in questi mesi si sono mobilitati in tutto il mondo.</p>
+<p>Quando Ca’Foscari, e i suoi dirigenti, stringono accordi e relazioni con Leonardo, allora, vanno a braccetto con quei repubblichini che occupano oggi gli spalti del governo, i quali hanno una precisa visione ideologica del ruolo imperialista dell’Italia. Ca’Foscari appoggia la vendita di armi, si presta alla ricerca bellica e fa gli interessi delle classi dirigenti e non dei suoi studenti. Se vogliamo la reale indipendenza accademica e se vogliamo che l’università non solo segua il suo dettato costituzionale, ma sia fonte di sapere per il bene comune e il reale sviluppo spirituale e morale di questo paese, dobbiamo ricordare pubblicamente le responsabilità della spregevole classe dirigente che governa questo paese e riportare i lavoratori e gli studenti uniti al governo.
+</p>
+        </main>
+    </div>
+    <footer>
+    <p>"Bellum tibi Palestina" - Unive sostiene il genocidio</p>
+    </footer>
+</body>
+</html>
