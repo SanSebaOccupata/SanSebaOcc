@@ -65,16 +65,16 @@
     <footer>
     <p>"Bellum tibi Palestina" - Unive sostiene il genocidio</p>
     </footer>
-    <script>
+<script>
         document.addEventListener('DOMContentLoaded', function() {
             fetch('articles.json')
                 .then(response => response.json())
                 .then(data => {
                     data.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    const latestArticles = data.slice(0, 4);
                     const articlesContainer = document.getElementById('articles');
                     latestArticles.forEach(article => {
                         const articleElement = document.createElement('div');
-                        const latestArticles = data.slice(0, 4);
                         articleElement.className = 'article-box';
                         articleElement.innerHTML = `
                             <a href="${article.link}">
@@ -84,11 +84,6 @@
                                 <h3 class="article-title">${article.title}</h3>
                                 <p class="article-description">${article.description}</p>
                             </div>
-                            <div class="article-date">${new Date(article.date).toLocaleDateString('it-IT', {
-                                    year: 'numeric',
-                                    month: 'long',
-                                    day: 'numeric'
-                                })}</div>
                         `;
                         articlesContainer.appendChild(articleElement);
                     });
@@ -98,3 +93,4 @@
     </script>
 </body>
 </html>
+
