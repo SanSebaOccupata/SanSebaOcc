@@ -54,7 +54,7 @@
         "date": "2024-05-31",
         "link": "Articles/WIS.html"
     }
-        ,
+    ,
     {
         "title": "Boicottaggio Accademico",
         "image": "Images/BoycottAcc.jpg",
@@ -62,7 +62,7 @@
         "date": "2024-05-31",
         "link": "Articles/BoycottAcc.html"
     }
-            ,
+    ,
     {
         "title": "Prospettiva Nazionale e Ruolo delle Univeristà",
         "image": "Images/ProspettivaNaz.jpeg",
@@ -70,12 +70,12 @@
         "date": "2024-05-31",
         "link": "Articles/ProNazRuUni.html"
     }
-                ,
+    ,
     {
         "title": "Cricità dell'Assemblea del 26 Giugno",
-        "image": "Images/ProspettivaNaz.jpeg",
-        "description": "Come può l’università non essere complice del genocidio in Palestina?",
-        "date": "2024-05-31",
-        "link": "Articles/ProNazRuUni.html"
+        "image": "Images/Cricità26Giugno.jpeg",
+        "description": "Le nostre rimostranze sull'organizzazione dell'Assemblea del 26 Giugno",
+        "date": "2024-06-26",
+        "link": "Articles/Cricità26Giugno.html"
     }
 ]
