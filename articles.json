@@ -30,4 +30,12 @@
         "date": "2024-06-24",
         "link": "Articles/McDonalds23Giugno.html"
     }
+       {
+        "title": "Ca' Foscari e Fincantieri",
+        "image": "Images/FoscFin.jpg",
+        "description": "Fincantieri, una delle maggiori società navalmeccaniche al mondo, contribuisce al 25,27% della spesa militare italiana, seconda solo a Leonardo il cui contributo è pari al 31,58%. Ecco come i suoi finanziamenti si problematizzano con Ca' Foscari",
+        "date": "2024-05-31",
+        "link": "Articles/EniEPale20Giugno.html"
+    }
+    ,
 ]
