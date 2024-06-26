@@ -48,10 +48,10 @@
     }
     ,
     {
-        "title": "Tel Aviv University",
-        "image": "Images/TelAvivUni.webp",
-        "description": "Gli organi della ricerca diventano un ingranaggio nel problematico trattamento dei palestinesi: Tel Aviv University.",
+        "title": "Weizmann Institute of Science",
+        "image": "Images/WIS.jpg",
+        "description": "Gli organi della ricerca diventano un ingranaggio nel problematico trattamento dei palestinesi: Weizmann Institute of Science.",
         "date": "2024-05-31",
-        "link": "Articles/TAU.html"
+        "link": "Articles/WIS.html"
     }
 ]
