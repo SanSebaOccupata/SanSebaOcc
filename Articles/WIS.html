@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .menu {
+            display: flex;
+            justify-content: center;
+            background-color: #EE2A35;
+            padding: 10px;
+        }
+
+        .nav-item {
+            padding: 5px 10px;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+
+        .nav-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-item:hover {
+            background-color: black;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .sidebar, .article-main {
+            background-color: #ffffff;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 97%;
+        }
+
+        .sidebar {
+            background-image: url('../Images/article-sidebar.webp');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+        }
+
+        .sidebar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(51, 51, 51, 0.6), rgba(51, 51, 51, 0.4), rgba(51, 51, 51, 0.2), rgba(51, 51, 51, 0));
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        .sidebar h3, .sidebar ul {
+            position: relative;
+            z-index: 2;
+        }
+
+        .sidebar h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            color: #009736;
+            text-decoration: none;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .article-main h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .article-main img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .article-main h2 {
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .article-main p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        @media screen and (min-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .sidebar, .article-main {
+                width: 97%;
+            }
+
+            .sidebar:last-child {
+                margin-right: 0;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .sidebar, .article-main {
+                width: 90%;
+            }
+        }
+
+        .homepage-body {
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .loading-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body class="homepage-body">
+    <nav>
+        <img src="../Images/Logo.jpg" alt="Logo">
+    </nav>
+    <nav class="menu">
+        <div class="nav-item">
+            <a href="../index.html">Home</a>
+        </div>
+        <div class="nav-item">
+            <a href="../chisiamo.html">Chi Siamo</a>
+        </div>
+        <div class="nav-item">
+            <a href="../comunicazioni.html">Comunicazioni</a>
+        </div>
+        <div class="nav-item">
+            <a href="../articles.html">Articoli</a>
+        </div>
+        <div class="nav-item">
+            <a href="../map.html">Mappa</a>
+        </div>
+    </nav>
+    <div class="content">
+        <aside class="sidebar">
+            <h3>Articoli Correlati</h3>
+            <ul>
+                <li><a href="Comunicazioni/Com20Giugno.html">Corteo per la Palestina!</a></li>
+                <li><a href="Comunicazioni/Credi20Giugno.html">Voci dalla Palestina</a></li>
+                <li><a href="article4.html">La Risposta Internazionale</a></li>
+            </ul>
+        </aside>
+        <main class="article-main">
+            <h1>
+                Weizmann Institute of Science
+            </h1>
+<p>Sin dalla sua fondazione, il Weizmann Institute of Science è sempre stato strettamente connesso, con il regime di apartheid e il genocidio sistematico imposti dallo Stato di Israele sul popolo palestinese. Come scrive Maya Wind nel suo Torri d’avorio e d’acciaio, “lo sviluppo dell’educazione superiore israeliana è intrecciato con l’ascesa delle industrie militari, e le università israeliane lo sostengono ancora”[1]. I rapporti con le maggiori firme legate al panorama dell’industria bellica dello Stato ebraico non riescono in tal senso a stupire, così come non stupisce l’impiego delle stesse infrastrutture concepite dall’istituto Weizmann da parte di due delle maggiori aziende belliche del Paese come RAFAEL Advanced Defense System e Israeli Aerospace Industry.</p>
+<p>In tal senso vale la pena ricordare che il Weizmann Institute:</p>
+<p>Ha attivo un intero programma dedicato ai “soldati", mascherato come una iniziativa volta a garantire il diritto allo studio, che in verità intende formare quegli individui già laureati che intendano specializzarsi in ambiti tecnici e scientifici spendibili all’interno del comparto militare.</p>
+<p>Con il Davidson Institute, porta avanti da anni un programma di scambio per i ragazzi delle superiori prossimi al diploma, per integrarli nelle Forze di Difesa Israeliane e agevolare il loro percorso, da appena diciottenni, all’interno dell’accademia militare[3], inserendoli nel sistema guerrafondaio sionista.</p>
+<p>Ha, per ovvi motivi, un intero ufficio dedicato ai riservisti militari.</p>
+<p>Ha organizzato con le IDF[5] e con Elbit System[6], una delle maggiori realtà di produzione tecnologico-bellica in Israele, eventi di inserimento lavorativo nell’ambito dell’informatica.</p>
+<p>Ha ricevuto dalla stessa Elbit System 16 milioni di dollari per la produzione di un telescopio; nell’ambito della tecnologia ottica, per inquadrare meglio il problema, vale la pena ricordare anche lo sviluppo, in partnership con l’Università di Ben Gurion, di uno strumento di riconoscimento ottico da applicare sulle telecamere dei droni; tecnologie di IA e di riconoscimento, insomma, che sarebbero fin troppo simili a quelle dichiaratamente usate dalle IDF per riconoscere e colpire bersagli palestinesi.</p>
+<p>Nel 2021, per chiudere una lista che potrebbe andare avanti ancora parecchio, ha collaborato con l’Università di Tel Aviv e l’Autorità di Antichità Israeliana per condurre scavi archeologici illegali su suolo palestinese, producendo per giunta un trionfale paper scientifico sui risultati. Altro scavo è stato fatto, sempre in coordinazione con l’Università di Tel Aviv, presso il sito della Città di David, nella Gerusalemme occupata.</p>  
+            </main>
+    </div>
+    <footer>
+    <p>"Bellum tibi Palestina" - Unive sostiene il genocidio</p>
+    </footer>
+</body>
+</html>
