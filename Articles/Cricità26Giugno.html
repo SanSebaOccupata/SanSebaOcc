@@ -204,6 +204,8 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('articles.json')
         .then(response => response.json())
         .then(data => {
+            console.log('Articles data:', data); // Debugging: Check if data is correctly fetched and parsed
+
             // Sort articles by date
             data.sort((a, b) => new Date(b.date) - new Date(a.date));
 
