@@ -5,7 +5,7 @@
         "link": "facciamo_chiarezza.pdf",
         "image": "Images/facciamo_chiarezza.png",
         "date": "2024-06-27",
-        "priority": true
+        "priority": true,
         "download": true,
         "keywords": ["Assemblea", "Studenti", "Dialogo", "Rettorato", "Comunità Studentesca"]
     },
@@ -14,113 +14,101 @@
         "image": "Images/manifestazione23.jpeg",
         "description": "A Venezia la lotta continua! Domenica 23 giugno le Assemblee Studentesche invitano la cittadinanza ad una manifestazione per la Palestina tra le calli della città. Ritrovo ore 15.00 in Piazzale Roma",
         "date": "2024-06-20",
-        "link": "Comunicazioni/Com20Giugno.html"
+        "link": "Comunicazioni/Com20Giugno.html",
         "keywords": ["Corteo", "Assemblea", "Venezia", "Manifestazione"]
-    }
-    ,
+    },
     {
         "title": "Eni e la Palestina",
         "image": "Images/EniePal.jpg",
         "description": "Come Eni e le grandi compagnie petrolifere del mondo sfruttano i conflitti e genocidi per profitto",
         "date": "2024-05-31",
-        "link": "Articles/EniEPale20Giugno.html"
+        "link": "Articles/EniEPale20Giugno.html",
         "keywords": ["Eni", "Petrolio", "Genocidio", "Palestina"]
-    }
-    ,
+    },
     {
         "title": "Credit Agricole",
         "image": "Images/creditagricole.avif",
         "description": "Crédit Agricole, l’ente finanziario a cui Ca’ Foscari affida i nostri soldi, è seconda in Europa per investimenti nelle 51 aziende che operano illegalmente nei Territori palestinesi occupati. Cosa vuol dire esattamente tutto questo? ",
         "date": "2024-05-31",
-        "link": "Articles/Credit20Giugno.html"
+        "link": "Articles/Credit20Giugno.html",
         "keywords": ["Credi Agricole", "Banche", "Ca' Foscari", "Palestina"]
-    }
-    ,
+    },
     {
         "title": "Perché boicottare McDonald's",
         "image": "Images/McDonBoycott.jpg",
         "description": "Palestina, sfruttamento lavorativo e impoverimento delle risorse: così McDonald's collabora al genocidio, e non solo in Palestina.",
         "date": "2024-06-24",
-        "link": "Articles/McDonalds23Giugno.html"
+        "link": "Articles/McDonalds23Giugno.html",
         "keywords": ["McDonald's", "Palestina", "Genocidio", "Ecocidio"]
-    }
-    ,
-       {
+    },
+    {
         "title": "Ca' Foscari e Fincantieri",
         "image": "Images/FoscFin.jpg",
         "description": "Fincantieri, una delle maggiori società navalmeccaniche al mondo, contribuisce al 25,27% della spesa militare italiana, seconda solo a Leonardo il cui contributo è pari al 31,58%. Ecco come i suoi finanziamenti si problematizzano con Ca' Foscari",
         "date": "2024-05-31",
-        "link": "Articles/FoscariFincantieri26Giugno.html"
+        "link": "Articles/FoscariFincantieri26Giugno.html",
         "keywords": ["Fincanteri", "Ca' Foscari", "Leonardo", "Armi"]
-    }
-    ,
-           {
+    },
+    {
         "title": "Haifa University",
         "image": "Images/Haifa.jpg",
         "description": "Gli organi della ricerca diventano un ingranaggio nel problematico trattamento dei palestinesi: Haifa.",
         "date": "2024-05-31",
-        "link": "Articles/HaifaUni.html"
+        "link": "Articles/HaifaUni.html",
         "keywords": ["Haifa", "Weizmann", "Università", "Boicottaggio"]
-    }
-    ,
+    },
     {
         "title": "Weizmann Institute of Science",
         "image": "Images/WIS.jpg",
         "description": "Gli organi della ricerca diventano un ingranaggio nel problematico trattamento dei palestinesi: Weizmann Institute of Science.",
         "date": "2024-05-31",
-        "link": "Articles/WIS.html"
+        "link": "Articles/WIS.html",
         "keywords": ["Haifa", "Weizmann", "Università", "Boicottaggio"]
-    }
-    ,
+    },
     {
         "title": "Boicottaggio Accademico",
         "image": "Images/BoycottAcc.jpg",
         "description": "Le università israeliane, situate su territori confiscati, producono una conoscenza e una ricerca fortemente collaborativa e funzionale al sistema militare, come dimostrano i vari programmi di studio e collaborazione fra le due entità,  rendendo l’università un luogo di ricerca e sviluppo sia per la produzione di armi sia per l’elaborazione di politiche e operazioni militari.",
         "date": "2024-05-31",
         "keywords": ["Haifa", "Weizmann", "Università", "Boicottaggio"]
-    }
-    ,
+    },
     {
         "title": "Prospettiva Nazionale e Ruolo delle Univeristà",
         "image": "Images/ProspettivaNaz.jpeg",
         "description": "Come può l’università non essere complice del genocidio in Palestina?",
         "date": "2024-05-31",
         "keywords": ["Haifa", "Weizmann", "Università", "Boicottaggio"]
-    }
-    ,
+    },
     {
         "title": "Criticità dell'Assemblea del 26 Giugno",
         "image": "Images/Cricità26Giugno.jpg",
         "description": "Le nostre rimostranze sull'organizzazione dell'Assemblea del 26 Giugno",
         "date": "2024-06-26",
-        "link": "Articles/Cricità26Giugno.html"
+        "link": "Articles/Cricità26Giugno.html",
         "keywords": ["Criticità", "Assemblea", "26 Giugno", "Ca' Foscari"]
-    }
-    ,
+    },
     {
         "title": "Boicottaggio",
         "image": "Images/Boycotto26Giugno.jpg",
         "description": "Il boicottaggio come strumento politico: l'esempio del 26 Giugno",
         "date": "2024-06-26",
-        "link": "Articles/Boicottaggio26Giugno.html"
+        "link": "Articles/Boicottaggio26Giugno.html",
         "keywords": ["Haifa", "Weizmann", "Università", "Boicottaggio", "Ca' Foscari"]
-    }
-    ,
+    },
     {
         "title": "Ingerenza dei Privati",
         "image": "Images/IngerenzaPrivati.jpg",
         "description": "Come le collaborazioni di Ca' Foscari con privati problematizza le decisioni etiche e pratiche della dirigenza",
         "date": "2024-06-26",
-        "link": "Articles/IngerenzaPrivati.html"
+        "link": "Articles/IngerenzaPrivati.html",
         "keywords": ["Leonardo", "Privati", "Credit Agricole", "Palestina"]
-    }
-    ,
+    },
     {
         "title": "Il Genocidio",
         "image": "Images/Genocidio26Giugno.jpg",
         "description": "Più che di un minuto di silenzio, i palestinesi hanno bisogno che urliamo a gran voce la loro tragedia e le ingiustizie che subiscono, perché qualcuno intervenga",
         "date": "2024-06-26",
-        "link": "Articles/Genocidio26Giugno.html"
+        "link": "Articles/Genocidio26Giugno.html",
         "keywords": ["Genocidio", "Università", "Ca' Foscari", "Palestina"]
     }
 ]
