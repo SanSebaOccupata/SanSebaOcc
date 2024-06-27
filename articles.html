@@ -128,61 +128,43 @@
         <p>"Bellum tibi Palestina" - Unive sostiene il genocidio</p>
     </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            fetch('articles.json')
-                .then(response => response.json())
-                .then(data => {
-                    // Separate priority articles from the rest
-                    const priorityArticles = data.filter(article => article.priority);
-                    const otherArticles = data.filter(article => !article.priority);
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('articles.json')
+        .then(response => response.json())
+        .then(data => {
+            // Separate priority articles from the rest
+            const priorityArticles = data.filter(article => article.priority);
+            const otherArticles = data.filter(article => !article.priority);
 
-                    // Sort other articles by date
-                    otherArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
+            // Sort other articles by date
+            otherArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-                    // Combine priority articles with the sorted other articles
-                    const sortedArticles = [...priorityArticles, ...otherArticles];
-                    
-                    const articlesContainer = document.getElementById('articles');
-                    sortedArticles.forEach(article => {
-                        const articleElement = document.createElement('div');
-                        articleElement.className = 'article-box';
-                        const link = article.download ? `<a href="${article.link}" download>` : `<a href="${article.link}">`;
-                        articleElement.innerHTML = `
-                            ${link}
-                                <img class="article-image" src="${article.image}" alt="${article.title}">
-                            </a>
-                            <div class="article-content">
-                                <h3 class="article-title">${article.title}</h3>
-                                <p class="article-description">${article.description}</p>
-                            </div>
-                        `;
-                        articlesContainer.appendChild(articleElement);
-                    });
+            // Combine priority articles with the sorted other articles
+            const sortedArticles = [...priorityArticles, ...otherArticles];
+            
+            const articlesContainer = document.getElementById('articles');
+            sortedArticles.forEach(article => {
+                const articleElement = document.createElement('div');
+                articleElement.className = 'article-box';
+                
+                const linkTag = article.download ? `<a href="${article.link}" download>` : `<a href="${article.link}">`;
+                
+                articleElement.innerHTML = `
+                    ${linkTag}
+                        <img src="${article.image}" alt="${article.title}" class="article-image">
+                    </a>
+                    <div class="article-content">
+                        <h3 class="article-title">${article.title}</h3>
+                        <p class="article-description">${article.description}</p>
+                    </div>
+                `;
+                
+                articlesContainer.appendChild(articleElement);
+            });
+        })
+        .catch(error => console.error('Error fetching articles:', error));
+});
 
-                    // Display related articles based on common keywords
-                    const relatedArticlesContainer = document.getElementById('related-articles').querySelector('.related-articles-container');
-                    const currentArticleKeywords = priorityArticles.length > 0 ? priorityArticles[0].keywords : [];
-                    const relatedArticles = otherArticles.filter(article => 
-                        article.keywords.some(keyword => currentArticleKeywords.includes(keyword))
-                    );
-
-                    relatedArticles.forEach(article => {
-                        const articleElement = document.createElement('div');
-                        articleElement.className = 'article-box';
-                        articleElement.innerHTML = `
-                            <a href="${article.link}">
-                                <img class="article-image" src="${article.image}" alt="${article.title}">
-                            </a>
-                            <div class="article-content">
-                                <h3 class="article-title">${article.title}</h3>
-                                <p class="article-description">${article.description}</p>
-                            </div>
-                        `;
-                        relatedArticlesContainer.appendChild(articleElement);
-                    });
-                })
-                .catch(error => console.error('Error fetching articles:', error));
-        });
     </script>
 </body>
 </html>
