@@ -141,14 +141,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Combine priority articles with the sorted other articles
             const sortedArticles = [...priorityArticles, ...otherArticles];
-            
+
             const articlesContainer = document.getElementById('articles');
+            const relatedArticlesContainer = document.getElementById('related-articles');
+
             sortedArticles.forEach(article => {
                 const articleElement = document.createElement('div');
                 articleElement.className = 'article-box';
-                
+
                 const linkTag = article.download ? `<a href="${article.link}" download>` : `<a href="${article.link}">`;
-                
+
                 articleElement.innerHTML = `
                     ${linkTag}
                         <img src="${article.image}" alt="${article.title}" class="article-image">
@@ -158,8 +160,41 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p class="article-description">${article.description}</p>
                     </div>
                 `;
-                
+
                 articlesContainer.appendChild(articleElement);
+
+                // Check if article keywords match current article keywords
+                const currentArticleKeywords = article.keywords;
+                const currentArticleId = article.id; // Replace with actual unique identifier for article
+
+                // Filter related articles based on keywords (exclude current article)
+                const relatedArticles = sortedArticles.filter(a =>
+                    a.keywords.some(keyword => currentArticleKeywords.includes(keyword)) &&
+                    a.id !== currentArticleId
+                );
+
+                // Display related articles
+                if (relatedArticles.length > 0) {
+                    const relatedArticlesSection = document.createElement('section');
+                    relatedArticlesSection.className = 'related-articles';
+                    relatedArticlesSection.innerHTML = `
+                        <h2>Related Articles</h2>
+                        <div class="related-articles-container">
+                            ${relatedArticles.map(related => `
+                                <div class="article-box">
+                                    <a href="${related.link}">
+                                        <img src="${related.image}" alt="${related.title}" class="article-image">
+                                    </a>
+                                    <div class="article-content">
+                                        <h3 class="article-title">${related.title}</h3>
+                                        <p class="article-description">${related.description}</p>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                    relatedArticlesContainer.appendChild(relatedArticlesSection);
+                }
             });
         })
         .catch(error => console.error('Error fetching articles:', error));
