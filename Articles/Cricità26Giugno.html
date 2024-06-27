@@ -209,19 +209,22 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('articles.json')
         .then(response => response.json())
         .then(data => {
-            // Separate priority articles from the rest
-            const priorityArticles = data.filter(article => article.priority);
-            const otherArticles = data.filter(article => !article.priority);
-
-            // Sort other articles by date
-            otherArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-            // Combine priority articles with the sorted other articles
-            const sortedArticles = [...priorityArticles, ...otherArticles];
+            // Sort articles by date
+            data.sort((a, b) => new Date(b.date) - new Date(a.date));
 
             const articlesContainer = document.getElementById('articles');
 
-            sortedArticles.forEach(article => {
+            // Function to find related articles by keywords
+            function findRelatedArticles(currentArticleKeywords, currentArticleTitle) {
+                const relatedArticles = data.filter(a =>
+                    a.keywords.some(keyword => currentArticleKeywords.includes(keyword)) &&
+                    a.title !== currentArticleTitle // Exclude current article
+                );
+                return relatedArticles;
+            }
+
+            // Loop through articles to display previews and related article links
+            data.forEach(article => {
                 const articleElement = document.createElement('div');
                 articleElement.className = 'article-box';
 
@@ -238,19 +241,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
 
                 articlesContainer.appendChild(articleElement);
-            });
 
-            // Function to find related articles by keywords
-            function findRelatedArticles(currentArticleKeywords, currentArticleTitle) {
-                const relatedArticles = sortedArticles.filter(a =>
-                    a.keywords.some(keyword => currentArticleKeywords.includes(keyword)) &&
-                    a.title !== currentArticleTitle // Exclude current article
-                );
-                return relatedArticles;
-            }
-
-            // Display related articles as links in the article preview section
-            sortedArticles.forEach(article => {
+                // Find related articles and display as links
                 const currentArticleKeywords = article.keywords;
                 const relatedArticles = findRelatedArticles(currentArticleKeywords, article.title);
 
@@ -271,7 +263,6 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Error fetching articles:', error));
 });
-
     </script>
 </body>
 </html>
