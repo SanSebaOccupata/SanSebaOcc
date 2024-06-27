@@ -11,7 +11,7 @@
     <meta name="keywords" content="San Sebastiano Occupata, Palestine, student movement, activism, student activism, Palestine freedom">
     <meta name="author" content="San Sebastiano Occupata">
     <meta name="robots" content="index, follow">
-    
+
     <style>
         .article-box {
             background-color: #dbd4d4;
@@ -53,6 +53,55 @@
                 font-size: 14px;
             }
         }
+
+        .related-articles {
+            margin-top: 40px;
+        }
+
+        .related-articles h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .related-articles-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            text-align: left;
+            padding-right: 20px;
+            background: linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+        }
+
+        .text-overlay h2 {
+            font-size: 2em;
+            margin: 0;
+        }
+
+        .text-overlay p {
+            font-size: 1.2em;
+            margin: 0;
+        }
     </style>
 </head>
 <body class="homepage-body">
@@ -69,44 +118,71 @@
     <section class="articles" id="articles">
         <!-- Articles will be inserted here by JavaScript -->
     </section>
+    <section class="related-articles" id="related-articles">
+        <h2>Related Articles</h2>
+        <div class="related-articles-container">
+            <!-- Related articles will be inserted here by JavaScript -->
+        </div>
+    </section>
     <footer>
-    <p>"Bellum tibi Palestina" - Unive sostiene il genocidio</p>
+        <p>"Bellum tibi Palestina" - Unive sostiene il genocidio</p>
     </footer>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    fetch('articles.json')
-        .then(response => response.json())
-        .then(data => {
-            // Separate priority articles from the rest
-            const priorityArticles = data.filter(article => article.priority);
-            const otherArticles = data.filter(article => !article.priority);
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('articles.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Separate priority articles from the rest
+                    const priorityArticles = data.filter(article => article.priority);
+                    const otherArticles = data.filter(article => !article.priority);
 
-            // Sort other articles by date
-            otherArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    // Sort other articles by date
+                    otherArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-            // Combine priority articles with the sorted other articles
-            const sortedArticles = [...priorityArticles, ...otherArticles];
-            
-            const articlesContainer = document.getElementById('articles');
-            sortedArticles.forEach(article => {
-                const articleElement = document.createElement('div');
-                articleElement.className = 'article';
-                const link = article.download ? `<a href="${article.link}" download>` : `<a href="${article.link}">`;
-                articleElement.innerHTML = `
-                    ${link}
-                        <img src="${article.image}" alt="${article.title}">
-                    </a>
-                    <div class="abstract">
-                        <h3>${article.title}</h3>
-                        <p>${article.description}</p>
-                    </div>
-                `;
-                articlesContainer.appendChild(articleElement);
-            });
-        })
-        .catch(error => console.error('Error fetching articles:', error));
-});
+                    // Combine priority articles with the sorted other articles
+                    const sortedArticles = [...priorityArticles, ...otherArticles];
+                    
+                    const articlesContainer = document.getElementById('articles');
+                    sortedArticles.forEach(article => {
+                        const articleElement = document.createElement('div');
+                        articleElement.className = 'article-box';
+                        const link = article.download ? `<a href="${article.link}" download>` : `<a href="${article.link}">`;
+                        articleElement.innerHTML = `
+                            ${link}
+                                <img class="article-image" src="${article.image}" alt="${article.title}">
+                            </a>
+                            <div class="article-content">
+                                <h3 class="article-title">${article.title}</h3>
+                                <p class="article-description">${article.description}</p>
+                            </div>
+                        `;
+                        articlesContainer.appendChild(articleElement);
+                    });
+
+                    // Display related articles based on common keywords
+                    const relatedArticlesContainer = document.getElementById('related-articles').querySelector('.related-articles-container');
+                    const currentArticleKeywords = priorityArticles.length > 0 ? priorityArticles[0].keywords : [];
+                    const relatedArticles = otherArticles.filter(article => 
+                        article.keywords.some(keyword => currentArticleKeywords.includes(keyword))
+                    );
+
+                    relatedArticles.forEach(article => {
+                        const articleElement = document.createElement('div');
+                        articleElement.className = 'article-box';
+                        articleElement.innerHTML = `
+                            <a href="${article.link}">
+                                <img class="article-image" src="${article.image}" alt="${article.title}">
+                            </a>
+                            <div class="article-content">
+                                <h3 class="article-title">${article.title}</h3>
+                                <p class="article-description">${article.description}</p>
+                            </div>
+                        `;
+                        relatedArticlesContainer.appendChild(articleElement);
+                    });
+                })
+                .catch(error => console.error('Error fetching articles:', error));
+        });
     </script>
 </body>
 </html>
-
