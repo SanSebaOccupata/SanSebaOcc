@@ -205,7 +205,7 @@ Ci è stata concessa questa assemblea più di un mese fa, in seguito alla pressa
     <p>"Bellum tibi Palestina" - Unive sostiene il genocidio</p>
     </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     fetch('articles.json')
         .then(response => response.json())
         .then(data => {
@@ -220,7 +220,6 @@ Ci è stata concessa questa assemblea più di un mese fa, in seguito alla pressa
             const sortedArticles = [...priorityArticles, ...otherArticles];
 
             const articlesContainer = document.getElementById('articles');
-            const relatedArticlesContainer = document.getElementById('related-articles');
 
             sortedArticles.forEach(article => {
                 const articleElement = document.createElement('div');
@@ -239,38 +238,34 @@ Ci è stata concessa questa assemblea più di un mese fa, in seguito alla pressa
                 `;
 
                 articlesContainer.appendChild(articleElement);
+            });
 
-                // Find related articles based on keywords
-                const currentArticleKeywords = article.keywords;
-                const currentArticleId = article.title; // Using title as a unique identifier for simplicity
-
-                // Filter related articles based on keywords (exclude current article)
+            // Function to find related articles by keywords
+            function findRelatedArticles(currentArticleKeywords, currentArticleTitle) {
                 const relatedArticles = sortedArticles.filter(a =>
                     a.keywords.some(keyword => currentArticleKeywords.includes(keyword)) &&
-                    a.title !== article.title // Exclude current article
+                    a.title !== currentArticleTitle // Exclude current article
                 );
+                return relatedArticles;
+            }
 
-                // Display related articles
+            // Display related articles as links in the article preview section
+            sortedArticles.forEach(article => {
+                const currentArticleKeywords = article.keywords;
+                const relatedArticles = findRelatedArticles(currentArticleKeywords, article.title);
+
                 if (relatedArticles.length > 0) {
-                    const relatedArticlesSection = document.createElement('section');
+                    const relatedArticlesSection = document.createElement('div');
                     relatedArticlesSection.className = 'related-articles';
                     relatedArticlesSection.innerHTML = `
-                        <h2>Related Articles</h2>
-                        <div class="related-articles-container">
+                        <h2>Related Articles for "${article.title}"</h2>
+                        <ul>
                             ${relatedArticles.map(related => `
-                                <div class="article-box">
-                                    <a href="${related.link}">
-                                        <img src="${related.image}" alt="${related.title}" class="article-image">
-                                    </a>
-                                    <div class="article-content">
-                                        <h3 class="article-title">${related.title}</h3>
-                                        <p class="article-description">${related.description}</p>
-                                    </div>
-                                </div>
+                                <li><a href="${related.link}" target="_blank">${related.title}</a></li>
                             `).join('')}
-                        </div>
+                        </ul>
                     `;
-                    relatedArticlesContainer.appendChild(relatedArticlesSection);
+                    articlesContainer.appendChild(relatedArticlesSection);
                 }
             });
         })
