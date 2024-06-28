@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
             relatedArticles.forEach(article => {
                 const listItem = document.createElement('li');
                 const link = document.createElement('a');
-                link.href = article.url;
+                link.href = article.link; // Use 'link' field directly from JSON
                 link.textContent = article.title;
                 listItem.appendChild(link);
                 relatedArticlesContainer.appendChild(listItem);
