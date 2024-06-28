@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Current article title:', currentArticleTitle); // Debugging: Check the current article title
 
             // Find the current article in the JSON data
-            const currentArticle = data.find(article => article.title.toLowerCase() === currentArticleTitle.toLowerCase());
+            const currentArticle = data.find(article => article.title === currentArticleTitle);
             if (!currentArticle) {
                 console.error('Current article not found in JSON data');
                 return;
@@ -236,7 +236,14 @@ document.addEventListener('DOMContentLoaded', function() {
             relatedArticles.forEach(article => {
                 const listItem = document.createElement('li');
                 const link = document.createElement('a');
-                link.href = article.link; // Updated key reference
+
+                // Adjust the path if it contains double "Articles"
+                let adjustedPath = article.url;
+                if (adjustedPath.includes('Articles/Articles')) {
+                    adjustedPath = adjustedPath.replace('Articles/Articles', 'Articles');
+                }
+
+                link.href = adjustedPath;
                 link.textContent = article.title;
                 listItem.appendChild(link);
                 relatedArticlesContainer.appendChild(listItem);
