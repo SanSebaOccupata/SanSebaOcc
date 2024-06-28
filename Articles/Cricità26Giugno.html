@@ -185,19 +185,20 @@
     <div class="content">
         <aside class="sidebar">
             <h3>Articoli Correlati</h3>
+            <ul id="related-articles">
+                <!-- Related articles will be injected here -->
+            </ul>
         </aside>
         <main class="article-main">
-            <h1>
-                CRITICITA' DELL'ASSEMBLEA
-            </h1>
-<p>Riteniamo necessario far presente quanto problematica sia l’organizzazione stessa dell’incontro di oggi, le cui premesse crediamo impediscono una discussione diretta è realmente democratica che implichi un dialogo tra governance e studenti.
-Ci è stata concessa questa assemblea più di un mese fa, in seguito alla pressante mobilitazione studentesca che si è presentata in presidio a Ca Foscari centrale lo scorso 22 maggio. Ribadiamo in primis la problematicità di data e luogo in cui questa assemblea si sta svolgendo.</p>
-<p>Riscontriamo una serie di lacune organizzative che dovrebbero  come la mancanza di un ordine del giorno e di una restituzione concreta prevista rispetto ai temi da discutere. Si è venuta a creare una forte disparità rappresentativa in quella che, secondo la Rettrice, vuole essere un’assemblea più partecipata possibile. (considerato l’invito mandato dal capo di dipartimenti di scienze ambientali Salvatore Orlando ai suoi studenti e colleghi, nel quale incentiva una prenotazione di massa da parte del suo dipartimento per “far fronte alle voci meno popolari”, abbiamo motivo di pensare che questa disparità rappresentativa non sia un incidente).</p> 
-<p>A questo punto vale la pena mettere in dubbio la governance d’ateneo nella sua capacità di sostenere un dialogo ampio e orizzontale con la componente studentesca e con il pta riguardo alle sue stesse scelte politiche e finanziarie. La mobilitazione studentesca in solidarietà al popolo palestinese, da cui nasce questo stesso intervento, non ha ancora una dimostrazione chiara dell’efficenza dei paradigmi accademici nella costruzione di un reale confronto sugli accordi tra Ca’ Foscari e i vari organi che finanziano lo stato genocida di Israele. Infatti l’incontro di oggi prendpiù la forma di una conferenza che di un'assemblea.</p> 
-<p>Vorrei concludere con una domanda alla rettrice stessa. Premesso che questa non è stata e non sarà l’unica istanza di dialogo assembleare fra la governance e la componente studentesca, come abbiamo intenzione di organizzare questo tipo di incontro in futuro? Le vie istituzionali e accademiche che adottiamo oggi saranno mai sufficienti a incontrare le ambizioni democratiche espresse più e più volte dalla rettrice? </p>
+            <h1>CRITICITA' DELL'ASSEMBLEA</h1>
+            <p>Riteniamo necessario far presente quanto problematica sia l’organizzazione stessa dell’incontro di oggi, le cui premesse crediamo impediscono una discussione diretta è realmente democratica che implichi un dialogo tra governance e studenti. Ci è stata concessa questa assemblea più di un mese fa, in seguito alla pressante mobilitazione studentesca che si è presentata in presidio a Ca Foscari centrale lo scorso 22 maggio. Ribadiamo in primis la problematicità di data e luogo in cui questa assemblea si sta svolgendo.</p>
+            <p>Riscontriamo una serie di lacune organizzative che dovrebbero  come la mancanza di un ordine del giorno e di una restituzione concreta prevista rispetto ai temi da discutere. Si è venuta a creare una forte disparità rappresentativa in quella che, secondo la Rettrice, vuole essere un’assemblea più partecipata possibile. (considerato l’invito mandato dal capo di dipartimenti di scienze ambientali Salvatore Orlando ai suoi studenti e colleghi, nel quale incentiva una prenotazione di massa da parte del suo dipartimento per “far fronte alle voci meno popolari”, abbiamo motivo di pensare che questa disparità rappresentativa non sia un incidente).</p> 
+            <p>A questo punto vale la pena mettere in dubbio la governance d’ateneo nella sua capacità di sostenere un dialogo ampio e orizzontale con la componente studentesca e con il pta riguardo alle sue stesse scelte politiche e finanziarie. La mobilitazione studentesca in solidarietà al popolo palestinese, da cui nasce questo stesso intervento, non ha ancora una dimostrazione chiara dell’efficenza dei paradigmi accademici nella costruzione di un reale confronto sugli accordi tra Ca’ Foscari e i vari organi che finanziano lo stato genocida di Israele. Infatti l’incontro di oggi prendpiù la forma di una conferenza che di un'assemblea.</p> 
+            <p>Vorrei concludere con una domanda alla rettrice stessa. Premesso che questa non è stata e non sarà l’unica istanza di dialogo assembleare fra la governance e la componente studentesca, come abbiamo intenzione di organizzare questo tipo di incontro in futuro? Le vie istituzionali e accademiche che adottiamo oggi saranno mai sufficienti a incontrare le ambizioni democratiche espresse più e più volte dalla rettrice? </p>
+        </main>
     </div>
     <footer>
-    <p>"Bellum tibi Palestina" - Unive sostiene il genocidio</p>
+        <p>"Bellum tibi Palestina" - Unive sostiene il genocidio</p>
     </footer>
     <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -206,56 +207,39 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             console.log('Articles data:', data); // Debugging: Check if data is correctly fetched and parsed
 
-            // Sort articles by date
-            data.sort((a, b) => new Date(b.date) - new Date(a.date));
+            // Extract the current article title from the main section (this is a basic example, refine as needed)
+            const currentArticleTitle = document.querySelector('.article-main h1').textContent;
+            console.log('Current article title:', currentArticleTitle); // Debugging: Check the current article title
 
-            const articlesContainer = document.getElementById('articles');
-
-            // Function to find related articles by keywords
-            function findRelatedArticles(currentArticleKeywords, currentArticleTitle) {
-                const relatedArticles = data.filter(a =>
-                    a.keywords.some(keyword => currentArticleKeywords.includes(keyword)) &&
-                    a.title !== currentArticleTitle // Exclude current article
-                );
-                return relatedArticles;
+            // Find the current article in the JSON data
+            const currentArticle = data.find(article => article.title === currentArticleTitle);
+            if (!currentArticle) {
+                console.error('Current article not found in JSON data');
+                return;
             }
+            console.log('Current article:', currentArticle); // Debugging: Check the current article details
 
-            // Loop through articles to display previews and related article links
-            data.forEach(article => {
-                const articleElement = document.createElement('div');
-                articleElement.className = 'article-box';
+            // Extract keywords from the current article
+            const currentKeywords = currentArticle.keywords;
+            console.log('Current article keywords:', currentKeywords); // Debugging: Check the current article keywords
 
-                const linkTag = article.download ? `<a href="${article.link}" download>` : `<a href="${article.link}">`;
+            // Find related articles based on keywords
+            const relatedArticles = data.filter(article => 
+                article !== currentArticle && 
+                article.keywords.some(keyword => currentKeywords.includes(keyword))
+            );
 
-                articleElement.innerHTML = `
-                    ${linkTag}
-                        <img src="${article.image}" alt="${article.title}" class="article-image">
-                    </a>
-                    <div class="article-content">
-                        <h3 class="article-title">${article.title}</h3>
-                        <p class="article-description">${article.description}</p>
-                    </div>
-                `;
+            console.log('Related articles:', relatedArticles); // Debugging: Check related articles
 
-                articlesContainer.appendChild(articleElement);
-
-                // Find related articles and display as links
-                const currentArticleKeywords = article.keywords;
-                const relatedArticles = findRelatedArticles(currentArticleKeywords, article.title);
-
-                if (relatedArticles.length > 0) {
-                    const relatedArticlesSection = document.createElement('div');
-                    relatedArticlesSection.className = 'related-articles';
-                    relatedArticlesSection.innerHTML = `
-                        <h2>Related Articles for "${article.title}"</h2>
-                        <ul>
-                            ${relatedArticles.map(related => `
-                                <li><a href="${related.link}" target="_blank">${related.title}</a></li>
-                            `).join('')}
-                        </ul>
-                    `;
-                    articlesContainer.appendChild(relatedArticlesSection);
-                }
+            // Append related articles to the sidebar
+            const relatedArticlesContainer = document.getElementById('related-articles');
+            relatedArticles.forEach(article => {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = article.url;
+                link.textContent = article.title;
+                listItem.appendChild(link);
+                relatedArticlesContainer.appendChild(listItem);
             });
         })
         .catch(error => console.error('Error fetching articles:', error));
