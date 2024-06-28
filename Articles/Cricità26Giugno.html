@@ -202,7 +202,7 @@
     </footer>
     <script>
 document.addEventListener('DOMContentLoaded', function() {
-    fetch('articles.json')
+    fetch('../articles.json')
         .then(response => response.json())
         .then(data => {
             console.log('Articles data:', data); // Debugging: Check if data is correctly fetched and parsed
