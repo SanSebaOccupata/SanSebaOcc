@@ -236,8 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
             relatedArticles.forEach(article => {
                 const listItem = document.createElement('li');
                 const link = document.createElement('a');
-                // Ensure article.link is correctly formatted without additional "Articles/" prefix
-                link.href = article.link.startsWith('Articles/') ? article.link : `Articles/${article.link}`;
+                link.href = article.link; // Use the link directly from the JSON
                 link.textContent = article.title;
                 listItem.appendChild(link);
                 relatedArticlesContainer.appendChild(listItem);
@@ -245,7 +244,6 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Error fetching articles:', error));
 });
-</script>
 </script>
 </body>
 </html>
