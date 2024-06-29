@@ -62,6 +62,7 @@
         "image": "Images/BoycottAcc.jpg",
         "description": "Le università israeliane, situate su territori confiscati, producono una conoscenza e una ricerca fortemente collaborativa e funzionale al sistema militare, come dimostrano i vari programmi di studio e collaborazione fra le due entità,  rendendo l’università un luogo di ricerca e sviluppo sia per la produzione di armi sia per l’elaborazione di politiche e operazioni militari.",
         "date": "2024-05-31",
+        "link": "Articles/BoycottAcc.html",
         "keywords": ["Haifa", "Weizmann", "Università", "Boicottaggio"]
     },
     {
@@ -69,6 +70,7 @@
         "image": "Images/ProspettivaNaz.jpeg",
         "description": "Come può l’università non essere complice del genocidio in Palestina?",
         "date": "2024-05-31",
+        "link": "Articles/ProNazRuUni.html",
         "keywords": ["Haifa", "Weizmann", "Università", "Boicottaggio"]
     },
     {
