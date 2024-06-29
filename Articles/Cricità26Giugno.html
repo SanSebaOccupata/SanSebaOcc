@@ -237,12 +237,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const listItem = document.createElement('li');
                 const link = document.createElement('a');
 
-                // If the link already includes "Articles", use it directly, otherwise prepend "Articles/"
-                if (article.link.includes('Articles/')) {
-                    link.href = article.link; 
-                } else {
-                    link.href = `Articles/${article.link}`;
-                }
+                // Construct the full URL using the base URL and the link from the JSON file
+                link.href = `https://sansebaoccupata.github.io/SanSebaOcc/${article.link}`;
                 
                 link.textContent = article.title;
                 listItem.appendChild(link);
