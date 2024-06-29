@@ -194,7 +194,7 @@
         </aside>
         <main class="article-main">
             <h1>
-                ENI e GUERRA IN PALESTINA
+                Eni e la Palestina
             </h1>
 <p>Come studentu di Ca’ Foscari che hanno aderito alla mobilitazione studentu per la Palestina libera con l’occupazione della sede di San Sebastiano, vogliamo porre l’attenzione sui legami che il nostro ateneo ha con aziende e banche del fossile, prime fra tutte Eni e Crédit Agricole e i loro legami con lo stato genocida di Israele. Eni SpA risulta la 30esima tra le 100 aziende che hanno causato il 71% delle emissioni di CO2 a livello globale. È il maggiore emettitore italiano di gas serra a livello mondiale. La multinazionale porta avanti chiari esempi di modelli neocoloniali, in cui l’accumulazione estrattivista avviene attraverso una predazione ambientale, creando meccanismi di dipendenza, di degradazione ambientale e degradazione socio-economica.  Lo sfruttamento dei territori e delle popolazioni causato da queste grandi aziende è ecocidio, perchè vengono messe a repentaglio tutte le basi ecologiche che garantiscono la riproduzione stessa della vita.</p>
 <p>Eni si è radicato all’interno dell’istruzione superiore e dentro le università in modo sistemico e capillare, in un’operazione di autopromozione di paladino della sostenibilità e transizione energetica. Nelle università Eni opera attraverso accordi e convenzioni per i tirocini, sovvenzioni a master e corsi di laurea, finanziamenti a bandi di ricerca e dottorati. I rapporti tra Eni e le Università spesso non sono trasparenti né immediati, ma sono nascosti da una facciata ambientalista, dal termine “sostenibilità”, centrale nello Statuto di Ateneo e nel Codice etico di Ca’ Foscari. Inoltre, nel Codice Etico, viene sottolineata l’indipendenza della ricerca e la trasparenza degli accordi, ma andando a osservare notiamo dei conflitti di interesse tra professori e aziende e la difficoltà a trovare le informazioni sui fondi che l’università riceve, anche perchè molti di essi confluiscono in un ente terzo, la Fondazione Ca’ Foscari. L’ateneo cerca, dunque, di costruirsi un’immagine pubblica in cui i temi ambientali sono centrali. Ma quanto corrisponde questo al vero?</p>
@@ -208,11 +208,59 @@ Cosa c’entra Eni con il genocidio in Palestina?
 </h2>
 <p>p>Nel settembre del 2000 venne scoperta Gaza Marine. I giacimenti vennero occupati dal governo israeliano. A oggi gli abitanti della Striscia non hanno nessun controllo sul giacimento. Negli anni successivi furono trovati altri due enormi giacimenti off shore: il Tamar e il Leviathan. L’occupazione e il colonialismo israeliano in Palestina è quindi strettamente connesso alla presenza di queste risorse e al ruolo che Israele vuole ottenere come uno dei principali esportatori di gas verso l’Europa. Per quanto riguarda i rapporti con l’Italia, a marzo 2023 Netanyahu, in un incontro con Giorgia Meloni, ha ribadito il proprio sostegno all’Italia nella fornitura di Gas, e oggi il governo italiano si è espresso alleato di Israele.  A febbraio 2024 la convenzione con Eni è stata dichiarata illegittima, per violazione del diritto internazionale secondo cui le risorse devono appartenere all’autorità palestinese. Tuttavia la multinazionale del fossile rimane una delle principali interlocutrici con Israele in campo energetico.</p> 
 <p>È quindi chiaro come il genocidio in atto in Palestina metta in luce le palesi e ormai traballanti contraddizioni su cui si poggiano le istituzioni politiche e culturali del nostro paese. Da una parte, un popolo a cui, da 76 anni, lo stato sionista nega la vita e l’accesso ai propri territori e alla propria autodeterminazione. Dall’altra, aziende di estrazione fossile, come Eni, che siglano accordi con questo stesso governo. Ed in mezzo, la nostra università, che collabora con entrambi. Continueremo a ripeterlo: la ricerca ed i saperi non sono neutri, l’università deve prendere posizione, al di fuori degli interessi dell’industria fossile, per la Palestina libera.</p>
-
-            </main>
+</main>
     </div>
     <footer>
     <p>"Bellum tibi Palestina" - Unive sostiene il genocidio</p>
     </footer>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('../articles.json')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Articles data:', data); // Debugging: Check if data is correctly fetched and parsed
+
+            // Extract the current article title from the main section
+            const currentArticleTitle = document.querySelector('.article-main h1').textContent.trim();
+            console.log('Current article title:', currentArticleTitle); // Debugging: Check the current article title
+
+            // Find the current article in the JSON data
+            const currentArticle = data.find(article => article.title === currentArticleTitle);
+            if (!currentArticle) {
+                console.error('Current article not found in JSON data');
+                return;
+            }
+            console.log('Current article:', currentArticle); // Debugging: Check the current article details
+
+            // Extract keywords from the current article
+            const currentKeywords = currentArticle.keywords;
+            console.log('Current article keywords:', currentKeywords); // Debugging: Check the current article keywords
+
+            // Find related articles based on keywords
+            const relatedArticles = data.filter(article => 
+                article.title !== currentArticleTitle && 
+                article.keywords.some(keyword => currentKeywords.includes(keyword))
+            );
+
+            console.log('Related articles:', relatedArticles); // Debugging: Check related articles
+
+            // Append related articles to the sidebar
+            const relatedArticlesContainer = document.getElementById('related-articles');
+            relatedArticles.forEach(article => {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+
+                // Construct the full URL using the base URL and the link from the JSON file
+                link.href = `https://sansebaoccupata.github.io/SanSebaOcc/${article.link}`;
+                
+                link.textContent = article.title;
+                listItem.appendChild(link);
+                relatedArticlesContainer.appendChild(listItem);
+            });
+        })
+        .catch(error => console.error('Error fetching articles:', error));
+});
+</script>
+
 </body>
 </html>
