@@ -194,7 +194,7 @@
         </aside>
         <main class="article-main">
             <h1>
-                GENOCIDIO
+                Il Genocidio
             </h1>
 <p>La prima delle nostre richieste è che l'Ateneo riconosca e condanni pubblicamente i crimini di genocidio e apartheid perpetrati dallo Stato di Israele ai danni del popolo palestinese.</p>
 <p>La Corte Internazionale di Giustizia ha emesso un'ordinanza in cui riconosce come plausibile il rischio che Israele stia commettendo il crimine di genocidio; secondo la relatrice speciale delle NU Francesca Albanese almeno 3 dei 5 crimini che rientrano sotto la definizione di Genocidio della Convenzione del 1948 sono attualmente perpetrati contro i palestinesi.</p>
@@ -207,5 +207,53 @@ Per questo vi chiediamo un onesto esame di coscienza che potrebbe salvarvi dal c
     <footer>
     <p>"Bellum tibi Palestina" - Unive sostiene il genocidio</p>
     </footer>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('../articles.json')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Articles data:', data); // Debugging: Check if data is correctly fetched and parsed
+
+            // Extract the current article title from the main section
+            const currentArticleTitle = document.querySelector('.article-main h1').textContent.trim();
+            console.log('Current article title:', currentArticleTitle); // Debugging: Check the current article title
+
+            // Find the current article in the JSON data
+            const currentArticle = data.find(article => article.title === currentArticleTitle);
+            if (!currentArticle) {
+                console.error('Current article not found in JSON data');
+                return;
+            }
+            console.log('Current article:', currentArticle); // Debugging: Check the current article details
+
+            // Extract keywords from the current article
+            const currentKeywords = currentArticle.keywords;
+            console.log('Current article keywords:', currentKeywords); // Debugging: Check the current article keywords
+
+            // Find related articles based on keywords
+            const relatedArticles = data.filter(article => 
+                article.title !== currentArticleTitle && 
+                article.keywords.some(keyword => currentKeywords.includes(keyword))
+            );
+
+            console.log('Related articles:', relatedArticles); // Debugging: Check related articles
+
+            // Append related articles to the sidebar
+            const relatedArticlesContainer = document.getElementById('related-articles');
+            relatedArticles.forEach(article => {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+
+                // Construct the full URL using the base URL and the link from the JSON file
+                link.href = `https://sansebaoccupata.github.io/SanSebaOcc/${article.link}`;
+                
+                link.textContent = article.title;
+                listItem.appendChild(link);
+                relatedArticlesContainer.appendChild(listItem);
+            });
+        })
+        .catch(error => console.error('Error fetching articles:', error));
+});
+</script>
 </body>
 </html>
