@@ -194,7 +194,7 @@
         </aside>
         <main class="article-main">
             <h1>
-                MCDONALD'S ED ISRAELE
+                Perché boicottare McDonald's
             </h1>
 <p>McDonalds è, come molti sapranno, un’industria multinazionale direttamente responsabile dell'espropriazione di risorse di altri Paesi. McDonalds sgombera le piccole fattorie e obbliga la popolazione locale a trasformare la produzione da cibo per la sussistenza interna a cereali destinati all’esportazione e all’uso di mangimi per animali dell’industria della carne, lasciando povertà e fame nei territori in cui si insedia. Inoltre, il prodotto finale che viene servito è intriso di elementi tossici, dannosi per la salute di chi li consuma; basti pensare che, per raggiungere un colore e gusto delle foglie di lattuga omogeneo in tutti gli stabilimenti di McDonald's, vengono applicati fino a venti diversi prodotti chimici, che vengono assorbiti e poi ingeriti dai consumatori. McDonald's, è conosciuto anche per lo sfruttamento de* su* lavorator*: bassi salari, orari di lavoro massacranti e poco rispetto delle regole di tutela dell’ambiente e dei dipendenti. Infine, è notizia dell’anno scorso che negli Stati Uniti sono stati scoperti due bambini di 10 anni che lavorano non pagati in uno stabilimento del Kentucky.</p>
 <p>Perché boicottare McDonald’s? Il boicottaggio è una forma di resistenza nonviolenta che si pratica per isolare a livello sociale, sottrarre consenso a livello politico o danneggiare a livello economico persone, aziende o istituzioni responsabili di comportamenti illegittimi.</p>
@@ -207,5 +207,53 @@
     <footer>
     <p>"Bellum tibi Palestina" - Unive sostiene il genocidio</p>
     </footer>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('../articles.json')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Articles data:', data); // Debugging: Check if data is correctly fetched and parsed
+
+            // Extract the current article title from the main section
+            const currentArticleTitle = document.querySelector('.article-main h1').textContent.trim();
+            console.log('Current article title:', currentArticleTitle); // Debugging: Check the current article title
+
+            // Find the current article in the JSON data
+            const currentArticle = data.find(article => article.title === currentArticleTitle);
+            if (!currentArticle) {
+                console.error('Current article not found in JSON data');
+                return;
+            }
+            console.log('Current article:', currentArticle); // Debugging: Check the current article details
+
+            // Extract keywords from the current article
+            const currentKeywords = currentArticle.keywords;
+            console.log('Current article keywords:', currentKeywords); // Debugging: Check the current article keywords
+
+            // Find related articles based on keywords
+            const relatedArticles = data.filter(article => 
+                article.title !== currentArticleTitle && 
+                article.keywords.some(keyword => currentKeywords.includes(keyword))
+            );
+
+            console.log('Related articles:', relatedArticles); // Debugging: Check related articles
+
+            // Append related articles to the sidebar
+            const relatedArticlesContainer = document.getElementById('related-articles');
+            relatedArticles.forEach(article => {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+
+                // Construct the full URL using the base URL and the link from the JSON file
+                link.href = `https://sansebaoccupata.github.io/SanSebaOcc/${article.link}`;
+                
+                link.textContent = article.title;
+                listItem.appendChild(link);
+                relatedArticlesContainer.appendChild(listItem);
+            });
+        })
+        .catch(error => console.error('Error fetching articles:', error));
+});
+</script>
 </body>
 </html>
