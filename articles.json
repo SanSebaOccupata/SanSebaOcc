@@ -8,6 +8,21 @@
         "priority": true,
         "download": true,
         "keywords": ["Assemblea", "Studenti", "Dialogo", "Rettorato", "Comunità Studentesca"]
+    },            {
+        "title": "Eventi 09 Marzo",
+        "image": "Images/Generation09.png",
+        "description": "Gli eventi in programma per il 09 Marzo",
+        "date": "2025-03-09",
+        "link": "Articles/09Marzo.html",
+        "keywords": ["8Marzo", "Palestina", "Donne", "Palestinesi", "Libertà"]
+    },
+            {
+        "title": "Eventi 08 Marzo",
+        "image": "Images/LottaDonna.jpeg",
+        "description": "Gli eventi in programma per l'08 Marzo",
+        "date": "2025-03-08",
+        "link": "Articles/08Marzo.html",
+        "keywords": ["8Marzo", "Palestina", "Donne", "Palestinesi", "Libertà"]
     },
         {
         "title": "Eventi 07 Marzo",
