@@ -5,7 +5,6 @@
         "link": "facciamo_chiarezza.pdf",
         "image": "Images/facciamo_chiarezza.png",
         "date": "2024-06-27",
-        "priority": true,
         "download": true,
         "keywords": ["Assemblea", "Studenti", "Dialogo", "Rettorato", "Comunità Studentesca"]
     },
@@ -15,6 +14,7 @@
         "description": "Dichiarazione di intenti per l'08 Marzo",
         "date": "2025-03-00",
         "link": "Articles/Intenti08.html",
+        "priority": true,
         "keywords": ["8Marzo", "Palestina", "Donne", "Palestinesi", "Libertà"]
     },
     {
