@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Sebastiano Occupata</title>
+
+    <!-- SEO elements -->
+    <meta name="description" content="San Sebastiano Occupata - Discover the mission and efforts of the student movement for Palestine.">
+    <meta name="keywords" content="San Sebastiano Occupata, Palestine, student movement, activism, student activism, Palestine freedom">
+    <meta name="author" content="San Sebastiano Occupata">
+    <meta name="robots" content="index, follow">
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: black;
+        }
+
+        nav {
+            background-color: black;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav img {
+            width: 35%;
+            height: auto;
+            margin-right: 0%;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            background-color: #EE2A35;
+            padding: 10px;
+        }
+
+        .nav-item {
+            padding: 5px 10px;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+
+        .nav-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-item:hover {
+            background-color: black;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .overlay-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .overlay-title h2 {
+            margin: 0;
+            font-size: 4vw;
+        }
+
+        .text-overlay-c {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            max-width: 100%;
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        .text-overlay-c p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #009736;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+        }
+
+        .loading-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+
+        .loading {
+            width: 100px;
+            height: auto;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 1200px) {
+            .text-overlay-c {
+                padding: 15px;
+            }
+
+            .text-overlay-c h2 {
+                font-size: 1.8em;
+            }
+
+            .text-overlay-c p {
+                font-size: 1em;
+            }
+
+            .overlay-title h2 {
+                font-size: 5vw;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            nav img {
+                width: 50%;
+                margin-right: 10px;
+            }
+
+            .menu .nav-item a {
+                font-size: 14px;
+            }
+
+            .overlay-title {
+                padding: 15px;
+            }
+
+            .overlay-title h2 {
+                font-size: 6vw;
+            }
+
+            .text-overlay-c {
+                padding: 10px;
+            }
+
+            .text-overlay-c p {
+                font-size: 0.9em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            nav img {
+                width: 70%;
+            }
+
+            .menu .nav-item a {
+                font-size: 12px;
+            }
+
+            .overlay-title {
+                padding: 10px;
+            }
+
+            .overlay-title h2 {
+                font-size: 7vw;
+            }
+
+            .text-overlay-c {
+                padding: 5px;
+            }
+
+            .text-overlay-c p {
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body class="homepage-body">
+    <nav>
+        <img src="Images/Logo.jpg" alt="Logo">
+    </nav>
+    <nav class="menu">
+        <div class="nav-item">
+            <a href="index.html">Home</a>
+        </div>
+        <div class="nav-item">
+            <a href="chisiamo.html">Chi Siamo</a>
+        </div>
+        <div class="nav-item">
+            <a href="comunicazioni.html">Comunicazioni</a>
+        </div>
+        <div class="nav-item">
+            <a href="articles.html">Articoli</a>
+        </div>
+        <div class="nav-item">
+            <a href="map.html">Mappa</a> 
+        </div>
+    </nav>
+    <div class="image-container">
+        <div class="overlay-title">
+            <h2>Dichiarazione di Intenti: 08 Marzo</h2>
+        </div>
+        <img src="Images/FemminismoRiv.jpeg" alt="Intenti08 Image">
+    </div>
+    <div class="text-overlay-c">
+        <div class="description-occ">
+            <p>Qui il testo della dichiarazione di intenti poi vediamo nn lo so ankora xdxdxd</p>
+        </div>
+    </div>
+    <footer>
+    <p>"Bellum tibi Palestina" - Unive sostiene il genocidio</p>
+    </footer>
+</body>
+</html>
