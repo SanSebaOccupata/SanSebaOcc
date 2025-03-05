@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>San Sebastiano Occupata</title>
+    <link rel="stylesheet" href="../style.css">
 
     <!-- SEO elements -->
     <meta name="description" content="San Sebastiano Occupata - Discover the mission and efforts of the student movement for Palestine.">
@@ -12,27 +13,6 @@
     <meta name="robots" content="index, follow">
     
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: black;
-            color: black;
-        }
-
-        nav {
-            background-color: black;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        nav img {
-            width: 35%;
-            height: auto;
-            margin-right: 0%;
-        }
-
         .menu {
             display: flex;
             justify-content: center;
@@ -57,57 +37,120 @@
             background-color: black;
         }
 
-        .image-container {
-            position: relative;
-            width: 100%;
-            height: auto;
-            overflow: hidden;
+        .content {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
         }
 
-        .image-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .overlay-title {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.6);
-            color: white;
-            text-align: center;
-            padding: 10px;
-            box-sizing: border-box;
-            width: 100%;
-        }
-
-        .overlay-title h2 {
-            margin: 0;
-            font-size: 4vw;
-        }
-
-        .text-overlay-c {
-            background-color: white;
+        .sidebar, .article-main {
+            background-color: #ffffff;
             color: black;
             padding: 20px;
-            max-width: 100%;
-            text-align: left;
-            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 97%;
         }
 
-        .text-overlay-c p {
-            font-size: 1.2em;
+        .sidebar {
+            background-image: url('../Images/article-sidebar.webp');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+        }
+
+        .sidebar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(51, 51, 51, 0.6), rgba(51, 51, 51, 0.4), rgba(51, 51, 51, 0.2), rgba(51, 51, 51, 0));
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        .sidebar h3, .sidebar ul {
+            position: relative;
+            z-index: 2;
+        }
+
+        .sidebar h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            color: #009736;
+            text-decoration: none;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .article-main h1 {
+            font-size: 32px;
             margin-bottom: 20px;
         }
 
-        footer {
-            background-color: #009736;
-            color: black;
-            text-align: center;
-            padding: 10px;
-            position: relative;
+        .article-main img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .article-main h2 {
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .article-main p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        @media screen and (min-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+
+            .sidebar, .article-main {
+                width: 97%;
+            }
+
+            .sidebar:last-child {
+                margin-right: 0;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .sidebar, .article-main {
+                width: 90%;
+            }
+        }
+
+        .homepage-body {
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #fff;
         }
 
         .loading-container {
@@ -117,125 +160,94 @@
             transform: translate(-50%, -50%);
             z-index: 9999;
         }
-
-        .loading {
-            width: 100px;
-            height: auto;
-            animation: spin 2s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Responsive adjustments */
-        @media screen and (max-width: 1200px) {
-            .text-overlay-c {
-                padding: 15px;
-            }
-
-            .text-overlay-c h2 {
-                font-size: 1.8em;
-            }
-
-            .text-overlay-c p {
-                font-size: 1em;
-            }
-
-            .overlay-title h2 {
-                font-size: 5vw;
-            }
-        }
-
-        @media screen and (max-width: 768px) {
-            nav img {
-                width: 50%;
-                margin-right: 10px;
-            }
-
-            .menu .nav-item a {
-                font-size: 14px;
-            }
-
-            .overlay-title {
-                padding: 15px;
-            }
-
-            .overlay-title h2 {
-                font-size: 6vw;
-            }
-
-            .text-overlay-c {
-                padding: 10px;
-            }
-
-            .text-overlay-c p {
-                font-size: 0.9em;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            nav img {
-                width: 70%;
-            }
-
-            .menu .nav-item a {
-                font-size: 12px;
-            }
-
-            .overlay-title {
-                padding: 10px;
-            }
-
-            .overlay-title h2 {
-                font-size: 7vw;
-            }
-
-            .text-overlay-c {
-                padding: 5px;
-            }
-
-            .text-overlay-c p {
-                font-size: 0.8em;
-            }
-        }
     </style>
 </head>
 <body class="homepage-body">
     <nav>
-        <img src="Images/Logo.jpg" alt="Logo">
+        <img src="../Images/Logo.jpg" alt="Logo">
     </nav>
     <nav class="menu">
         <div class="nav-item">
-            <a href="index.html">Home</a>
+            <a href="../index.html">Home</a>
         </div>
         <div class="nav-item">
-            <a href="chisiamo.html">Chi Siamo</a>
+            <a href="../chisiamo.html">Chi Siamo</a>
         </div>
         <div class="nav-item">
-            <a href="comunicazioni.html">Comunicazioni</a>
+            <a href="../comunicazioni.html">Comunicazioni</a>
         </div>
         <div class="nav-item">
-            <a href="articles.html">Articoli</a>
+            <a href="../articles.html">Articoli</a>
         </div>
         <div class="nav-item">
-            <a href="map.html">Mappa</a> 
+            <a href="../map.html">Mappa</a>
         </div>
     </nav>
-    <div class="image-container">
-        <div class="overlay-title">
-            <h2>Dichiarazione di Intenti: 08 Marzo</h2>
-        </div>
-        <img src="Images/FemminismoRiv.jpeg" alt="Intenti08 Image">
-    </div>
-    <div class="text-overlay-c">
-        <div class="description-occ">
-            <p>Qui il testo della dichiarazione di intenti poi vediamo nn lo so ankora xdxdxd</p>
-        </div>
+    <div class="content">
+                <aside class="sidebar">
+            <h3>Articoli Correlati</h3>
+            <ul id="related-articles">
+                <!-- Related articles will be injected here -->
+            </ul>
+        </aside>
+        <main class="article-main">
+            <h1>
+                Sconfiniamoci: dichiarazione di intenti 08 Marzo
+            </h1>
+<p>
+    Qua va il testo KE BRUTTO AFFARE CREDEVO FOSSE UN AMORE NUCLEAREEEEEEE
+</p>
     </div>
     <footer>
     <p>"Bellum tibi Palestina" - Unive sostiene il genocidio</p>
     </footer>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('../articles.json')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Articles data:', data); // Debugging: Check if data is correctly fetched and parsed
+
+            // Extract the current article title from the main section
+            const currentArticleTitle = document.querySelector('.article-main h1').textContent.trim();
+            console.log('Current article title:', currentArticleTitle); // Debugging: Check the current article title
+
+            // Find the current article in the JSON data
+            const currentArticle = data.find(article => article.title === currentArticleTitle);
+            if (!currentArticle) {
+                console.error('Current article not found in JSON data');
+                return;
+            }
+            console.log('Current article:', currentArticle); // Debugging: Check the current article details
+
+            // Extract keywords from the current article
+            const currentKeywords = currentArticle.keywords;
+            console.log('Current article keywords:', currentKeywords); // Debugging: Check the current article keywords
+
+            // Find related articles based on keywords
+            const relatedArticles = data.filter(article => 
+                article.title !== currentArticleTitle && 
+                article.keywords.some(keyword => currentKeywords.includes(keyword))
+            );
+
+            console.log('Related articles:', relatedArticles); // Debugging: Check related articles
+
+            // Append related articles to the sidebar
+            const relatedArticlesContainer = document.getElementById('related-articles');
+            relatedArticles.forEach(article => {
+                const listItem = document.createElement('li');
+                const link = document.createElement('a');
+
+                // Construct the full URL using the base URL and the link from the JSON file
+                link.href = `https://sansebaoccupata.github.io/SanSebaOcc/${article.link}`;
+                
+                link.textContent = article.title;
+                listItem.appendChild(link);
+                relatedArticlesContainer.appendChild(listItem);
+            });
+        })
+        .catch(error => console.error('Error fetching articles:', error));
+});
+</script>
 </body>
 </html>
