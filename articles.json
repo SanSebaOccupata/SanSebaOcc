@@ -9,6 +9,14 @@
         "download": true,
         "keywords": ["Assemblea", "Studenti", "Dialogo", "Rettorato", "Comunità Studentesca"]
     },
+        {
+        "title": "Eventi 07 Marzo",
+        "image": "Images/07Marzo.webp",
+        "description": "Gli eventi in programma per il 07 Marzo",
+        "date": "2025-03-07",
+        "link": "Articles/07Marzo.html",
+        "keywords": ["8Marzo", "Palestina", "Donne", "Palestinesi", "Libertà"]
+    },
     {
         "title": "Eni e la Palestina",
         "image": "Images/EniePal.jpg",
