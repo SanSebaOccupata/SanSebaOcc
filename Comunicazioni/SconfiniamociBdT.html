@@ -11,263 +11,166 @@
     <meta name="keywords" content="San Sebastiano Occupata, Palestine, student movement, activism, student activism, Palestine freedom">
     <meta name="author" content="San Sebastiano Occupata">
     <meta name="robots" content="index, follow">
-    <style>
-        .menu {
-            display: flex;
-            justify-content: center;
-            background-color: #EE2A35;
-            padding: 10px;
-        }
-
-        .nav-item {
-            padding: 5px 10px;
-            margin: 0 5px;
-            border-radius: 5px;
-        }
-
-        .nav-item a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-
-        .nav-item:hover {
-            background-color: black;
-        }
-
-        .content {
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-        }
-
-        .sidebar, .article-main {
-            background-color: #ffffff;
-            color: black;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            width: 97%;
-        }
-
-        .sidebar {
-            background-image: url('../Images/comunicazioni.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            color: white;
-        }
-
-        .sidebar::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(51, 51, 51, 0.6), rgba(51, 51, 51, 0.4), rgba(51, 51, 51, 0.2), rgba(51, 51, 51, 0));
-            border-radius: 10px;
-            z-index: 1;
-        }
-
-        .sidebar h3, .sidebar ul {
-            position: relative;
-            z-index: 2;
-        }
-
-        .sidebar h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .sidebar ul li {
-            margin-bottom: 10px;
-        }
-
-        .sidebar ul li a {
-            color: #009736;
-            text-decoration: none;
-        }
-
-        .sidebar ul li a:hover {
-            text-decoration: underline;
-        }
-
-        .article-main h1 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
-
-        .article-main img {
-            width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-            border-radius: 10px;
-        }
-
-        .article-main h2 {
-            font-size: 24px;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        .article-main p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        @media screen and (min-width: 768px) {
+        <style>
             .content {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 20px;
+            }
+
+            .sidebar, .article-main {
+                background-color: #ffffff;
+                color: black;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+            }
+
+            .sidebar {
+                background-color: #333;
+                color: white;
+                width: 100%;
+            }
+
+            .article-main {
+                width: 100%;
+            }
+
+            .article-main h1 {
+                align-items: center;
+                text-align: center;
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+            .event-box {
+                background: white;
+                opacity:0.8;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                margin-bottom: 20px;
+                display: flex;
                 flex-direction: column;
+                align-items: center;
+                text-align: center;
+                color: black;
+            }
+            .event-card1 {
+                background: url('../Images/article-sidebar.webp') center/cover no-repeat;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                margin-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                color: white;
             }
 
-            .sidebar, .article-main {
-                width: 97%;
+            .event-card2 {
+                background: url('../Images/comunicazioni-sidebar.jpg') center/cover no-repeat;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                margin-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                color: white;
             }
 
-            .sidebar:last-child {
-                margin-right: 0;
+            .event-card3 {
+                background: url('../Images/slider2.webp') center/cover no-repeat;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                margin-bottom: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                color: white;
             }
-        }
 
-        @media screen and (max-width: 767px) {
-            .sidebar, .article-main {
-                width: 90%;
+            .event-card h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
             }
-        }
 
-        .homepage-body {
-            background-color: black;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            color: #fff;
-        }
+            .event-card p {
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
 
-        .loading-container {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 9999;
-        }
-        .calendar-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+            .event-card .event-icon {
+                font-size: 30px;
+                margin-bottom: 10px;
+            }
 
-.calendar-table th, .calendar-table td {
-    padding: 15px;
-    text-align: center;
-    font-size: 18px;
-}
-
-.calendar-table th {
-    background-color: #EE2A35;
-    color: white;
-}
-
-.calendar-table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.calendar-table tr:hover {
-    background-color: #ffdddd;
-    transition: 0.3s;
-}
-
-.calendar-table td {
-    background-color: #ffffff;
-    border-bottom: 2px solid #ddd;
-}
-
-.calendar-event-icon {
-    font-size: 20px;
-    margin-right: 5px;
-}
-
-.homepage-body {
-    background-image: url('Images/sughero.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    color: #fff;
-}
-    </style>
-</head>
-<body class="homepage-body">
-    <nav>
-        <img src="../Images/Logo.jpg" alt="Logo">
-    </nav>
-    <nav class="menu">
-        <div class="nav-item">
-            <a href="../index.html">Home</a>
-        </div>
-        <div class="nav-item">
-            <a href="../chisiamo.html">Chi Siamo</a>
-        </div>
-        <div class="nav-item">
-            <a href="../comunicazioni.html">Comunicazioni</a>
-        </div>
-        <div class="nav-item">
-            <a href="../articles.html">Articoli</a>
-        </div>
-        <div class="nav-item">
-            <a href="../map.html">Mappa</a>
-        </div>
-    </nav>
-    <div class="content">
-        <aside class="sidebar">
-            <h3>Articoli Correlati</h3>
-            <ul>
-                <li><a href="Comunicazioni/Com20Giugno.html">Corteo per la Palestina!</a></li>
-                <li><a href="Comunicazioni/Credi20Giugno.html">Voci dalla Palestina</a></li>
-                <li><a href="article4.html">La Risposta Internazionale</a></li>
-            </ul>
-        </aside>
+            .homepage-body {
+                background-image: url('Images/sughero.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                color: #fff;
+            }
+        </style>
+    </head>
+    <body class="homepage-body">
+        <nav>
+            <img src="../Images/Logo.jpg" alt="Logo">
+        </nav>
+        <nav class="menu">
+            <div class="nav-item"><a href="../index.html">Home</a></div>
+            <div class="nav-item"><a href="../chisiamo.html">Chi Siamo</a></div>
+            <div class="nav-item"><a href="../comunicazioni.html">Comunicazioni</a></div>
+            <div class="nav-item"><a href="../articles.html">Articoli</a></div>
+            <div class="nav-item"><a href="../map.html">Mappa</a></div>
+        </nav>
+        <div class="content">
+            <aside class="sidebar">
+                <h3>Articoli Correlati</h3>
+                <ul>
+                    <li><a href="article2.html">Le Radici del Conflitto</a></li>
+                    <li><a href="article3.html">Voci dalla Palestina</a></li>
+                    <li><a href="article4.html">La Risposta Internazionale</a></li>
+                </ul>
+            </aside>
             <main class="article-main">
                 <h1>Calendario Eventi 7-9 Marzo</h1>
-                <table class="calendar-table">
-                    <tr>
-                        <th>Data</th>
-                        <th>Orario</th>
-                        <th>Evento</th>
-                        <th>Luogo</th>
-                    </tr>
-                    <tr>
-                        <td>7 Marzo</td>
-                        <td>10:00 - 12:00</td>
-                        <td>📢 Workshop sulla Pace</td>
-                        <td>🏛 Aula Magna</td>
-                    </tr>
-                    <tr>
-                        <td>8 Marzo</td>
-                        <td>14:00 - 16:00</td>
-                        <td>✊ Manifestazione per i Diritti</td>
-                        <td>📍 Piazza Centrale</td>
-                    </tr>
-                    <tr>
-                        <td>9 Marzo</td>
-                        <td>18:00 - 20:00</td>
-                        <td>🎬 Proiezione Documentario</td>
-                        <td>🎭 Auditorium</td>
-                    </tr>
-                </table>
+                <div class="event-card1">
+                    <div class="event-box">
+                    <span class="event-icon">📢</span>
+                    <h2>Workshop sulla Pace</h2>
+                    <p><strong>Data:</strong> 7 Marzo</p>
+                    <p><strong>Orario:</strong> 10:00 - 12:00</p>
+                    <p><strong>Luogo:</strong> 🏛 Aula Magna</p>
+                    </div>
+                </div>
+                <div class="event-card2">
+                    <div class="event-box">
+                    <span class="event-icon">✊</span>
+                    <h2>Manifestazione per i Diritti</h2>
+                    <p><strong>Data:</strong> 8 Marzo</p>
+                    <p><strong>Orario:</strong> 14:00 - 16:00</p>
+                    <p><strong>Luogo:</strong> 📍 Piazza Centrale</p>
+                    </div>
+                </div>
+                <div class="event-card3">
+                    <div class="event-box">
+                    <span class="event-icon">🎬</span>
+                    <h2>Proiezione Documentario</h2>
+                    <p><strong>Data:</strong> 9 Marzo</p>
+                    <p><strong>Orario:</strong> 18:00 - 20:00</p>
+                    <p><strong>Luogo:</strong> 🎭 Auditorium</p>
+                    </div>
+                </div>
             </main>
         </div>
         <footer>
