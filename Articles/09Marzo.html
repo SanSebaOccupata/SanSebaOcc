@@ -1,1 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09 Marzo</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            color: black;
+        }
 
+        nav {
+            background-color: black;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav img {
+            width: 35%;
+            height: auto;
+            margin-right: 0%;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            background-color: #EE2A35;
+            padding: 10px;
+        }
+
+        .nav-item {
+            padding: 5px 10px;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+
+        .nav-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-item:hover {
+            background-color: black;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .sidebar, .article-main {
+            background-color: #ffffff;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .sidebar {
+            background-image: url('../Images/comunicazioni-sidebar.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+            width: 700%;
+        }
+
+        .sidebar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(to right, rgba(34, 34, 34, 0.8), rgba(51, 51, 51, 0.6), rgba(51, 51, 51, 0.4), rgba(51, 51, 51, 0.2), rgba(51, 51, 51, 0));
+            border-radius: 10px;
+            z-index: 1;
+        }
+
+        .sidebar h3, .sidebar ul {
+            position: relative;
+            z-index: 2;
+        }
+
+        .sidebar h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            color: #009736;
+            text-decoration: none;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .article-main {
+            width: 100%;
+        }
+
+        .article-main h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .article-main img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .article-main h2 {
+            font-size: 24px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .article-main p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        @media screen and (min-width: 768px) {
+            .sidebar {
+                width: 100%;
+                margin-right: 20px;
+            }
+
+            .article-main {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .sidebar, .article-main {
+                width: 100%;
+            }
+        }
+
+        .homepage-body {
+            background-image: url('Images/sughero.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #fff; /* White text color */
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            background-color: #EE2A35;
+            padding: 10px;
+        }
+
+        .nav-item {
+            padding: 5px 10px;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+
+        .nav-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-item:hover {
+            background-color: black;
+        }
+        .event-section {
+    background-color: #f2f2f2;  /* Sfondo grigio chiaro */
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.event-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #EE2A35;
+}
+
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.event-item {
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-item h3 {
+    font-size: 22px;
+    color: #333;
+}
+
+.event-item p {
+    font-size: 16px;
+    color: #666;
+}
+
+.event-item p strong {
+    color: #EE2A35;
+}
+    </style>
+    </style>
+</head>
+<body class="homepage-body">
+    <nav>
+        <img src="../Images/Logo.jpg" alt="Logo">
+    </nav>
+    <nav class="menu">
+        <div class="nav-item">
+            <a href="../index.html">Home</a>
+        </div>
+        <div class="nav-item">
+            <a href="../chisiamo.html">Chi Siamo</a>
+        </div>
+        <div class="nav-item">
+            <a href="../comunicazioni.html">Comunicazioni</a>
+        </div>
+        <div class="nav-item">
+            <a href="../articles.html">Articoli</a>
+        </div>
+        <div class="nav-item">
+            <a href="../map.html">Mappa</a> 
+        </div>
+    </nav>
+    <div class="content">
+        <aside class="sidebar">
+            <h3>Articoli Correlati</h3>
+            <ul>
+                <li><a href="Comunicazioni/Com20Giugno.html">Corteo per la Palestina!</a></li>
+                <li><a href="Comunicazioni/Credi20Giugno.html">Voci dalla Palestina</a></li>
+                <li><a href="article4.html">La Risposta Internazionale</a></li>
+            </ul>
+        </aside>
+        <main class="article-main">
+            <h1>09 Marzo</h1>
+            <p>Scopri gli eventi in programma per il 9 Marzo!</p>
+        
+            <!-- Sezione Eventi -->
+            <div class="event-section">
+                <div class="event-list">
+                    <div class="event-item">
+                        <h3>Evento 1: Manifestazione in piazza</h3>
+                        <p><strong>Orario:</strong> 10:00 AM</p>
+                        <p><strong>Luogo:</strong> Piazza Principale</p>
+                        <p>Unisciti alla manifestazione a sostegno della causa palestinese. Partecipa per fare la differenza!</p>
+                    </div>
+                    <div class="event-item">
+                        <h3>Evento 2: Incontro con esperti</h3>
+                        <p><strong>Orario:</strong> 12:00 PM</p>
+                        <p><strong>Luogo:</strong> Sala Conferenze</p>
+                        <p>Un incontro con esperti che discuteranno della situazione attuale in Palestina e delle azioni future.</p>
+                    </div>
+                    <div class="event-item">
+                        <h3>Evento 3: Proiezione del documentario</h3>
+                        <p><strong>Orario:</strong> 5:00 PM</p>
+                        <p><strong>Luogo:</strong> Cinema Universitario</p>
+                        <p>Non perdere la proiezione di un documentario che racconta la realtà della Palestina. Un'occasione per riflettere e agire.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <p>"Bellum tibi Palestina" - Unive sostiene il genocidio</p>
+    </footer>
+</body>
+</html>
