@@ -127,19 +127,22 @@
     <footer>
         <p>"Bellum tibi Palestina" - Unive sostiene il genocidio</p>
     </footer>
-    <script>
+<script>
 document.addEventListener('DOMContentLoaded', function() {
     fetch('articles.json')
         .then(response => response.json())
         .then(data => {
-            // Separate priority articles from the rest
-            const priorityArticles = data.filter(article => article.priority);
-            const otherArticles = data.filter(article => !article.priority);
+            // Nascondi gli articoli con "hidden: true"
+            const visibleArticles = data.filter(article => !article.hidden);
 
-            // Sort other articles by date
+            // Separa gli articoli con priorità dagli altri
+            const priorityArticles = visibleArticles.filter(article => article.priority);
+            const otherArticles = visibleArticles.filter(article => !article.priority);
+
+            // Ordina gli altri articoli per data
             otherArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-            // Combine priority articles with the sorted other articles
+            // Combina articoli prioritari e ordinati
             const sortedArticles = [...priorityArticles, ...otherArticles];
 
             const articlesContainer = document.getElementById('articles');
@@ -158,29 +161,32 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="article-content">
                         <h3 class="article-title">${article.title}</h3>
                         <p class="article-description">${article.description}</p>
+                        <div class="article-date">${new Date(article.date).toLocaleDateString('it-IT', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        })}</div>
                     </div>
                 `;
 
                 articlesContainer.appendChild(articleElement);
+            });
 
-                // Check if article keywords match current article keywords
-                const currentArticleKeywords = article.keywords;
-                const currentArticleId = article.id; // Replace with actual unique identifier for article
+            // **Gestione articoli correlati**
+            sortedArticles.forEach(article => {
+                const currentArticleKeywords = article.keywords || [];
+                const currentArticleId = article.id; // Assicurati che ogni articolo abbia un ID univoco
 
-                // Filter related articles based on keywords (exclude current article)
+                // Filtra articoli correlati (con parole chiave comuni, escludendo quello attuale)
                 const relatedArticles = sortedArticles.filter(a =>
-                    a.keywords.some(keyword => currentArticleKeywords.includes(keyword)) &&
-                    a.id !== currentArticleId
+                    a.id !== currentArticleId && a.keywords.some(keyword => currentArticleKeywords.includes(keyword))
                 );
-                // Hidden articles
-                const filteredArticles = articles.filter(article => !article.hidden);
 
-                // Display related articles
                 if (relatedArticles.length > 0) {
                     const relatedArticlesSection = document.createElement('section');
                     relatedArticlesSection.className = 'related-articles';
                     relatedArticlesSection.innerHTML = `
-                        <h2>Related Articles</h2>
+                        <h2>Articoli correlati</h2>
                         <div class="related-articles-container">
                             ${relatedArticles.map(related => `
                                 <div class="article-box">
@@ -190,12 +196,12 @@ document.addEventListener('DOMContentLoaded', function() {
                                     <div class="article-content">
                                         <h3 class="article-title">${related.title}</h3>
                                         <p class="article-description">${related.description}</p>
+                                        <div class="article-date">${new Date(related.date).toLocaleDateString('it-IT', {
+                                            year: 'numeric',
+                                            month: 'long',
+                                            day: 'numeric'
+                                        })}</div>
                                     </div>
-                                    <div class="article-date">${new Date(article.date).toLocaleDateString('it-IT', {
-                                    year: 'numeric',
-                                    month: 'long',
-                                    day: 'numeric'
-                                })}</div>
                                 </div>
                             `).join('')}
                         </div>
@@ -204,10 +210,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         })
-        .catch(error => console.error('Error fetching articles:', error));
+        .catch(error => console.error('Errore nel recupero degli articoli:', error));
 });
+</script>
 
-    </script>
 </body>
 </html>
 
