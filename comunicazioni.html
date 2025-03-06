@@ -170,13 +170,14 @@
             .then(response => response.json())
             .then(data => {
                 // Sort articles by date in descending order
-               data.sort((a, b) => new Date(b.date) - new Date(a.date));
+                data.sort((a, b) => new Date(b.date) - new Date(a.date));
+
                 // Hidden articles
-                const filteredArticles = articles.filter(article => !article.hidden);
+                const filteredArticles = data.filter(article => !article.hidden);
                 
                 // Generate HTML for the articles
                 const articlesContainer = document.getElementById('article-container');
-                data.forEach(article => {
+                filteredArticles.forEach(article => {  // Usa 'filteredArticles' invece di 'data'
                     const articleElement = document.createElement('div');
                     articleElement.className = 'article-box';
                     articleElement.innerHTML = `
