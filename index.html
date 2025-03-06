@@ -235,6 +235,9 @@
     if (a.priority === true && b.priority !== true) return -1;
     return new Date(b.date) - new Date(a.date);
 });
+                    //Hidden Articles
+                    const filteredArticles = articles.filter(article => !article.hidden);
+                    
                     const latestArticles = data.slice(0, 3);
                     const articlesContainer = document.getElementById('articles');
                     latestArticles.forEach(article => {
