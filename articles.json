@@ -14,7 +14,6 @@
         "description": "Dichiarazione di intenti per l'08 Marzo",
         "date": "2025-03-00",
         "link": "Articles/Intenti08.html",
-        "priority": true,
         "keywords": ["8Marzo", "Palestina", "Donne", "Palestinesi", "Libertà"]
     },
     {
@@ -40,6 +39,7 @@
             spazi in cui vivere, superando i confini. Parola d'ordine: sconfinare!",
         "date": "2025-03-07",
         "link": "Articles/07Marzo.html",
+        "priority": true,
         "keywords": ["8Marzo", "Palestina", "Donne", "Palestinesi", "Libertà"]
     },
     {
