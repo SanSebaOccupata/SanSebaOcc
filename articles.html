@@ -172,6 +172,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     a.keywords.some(keyword => currentArticleKeywords.includes(keyword)) &&
                     a.id !== currentArticleId
                 );
+                // Hidden articles
+                const filteredArticles = articles.filter(article => !article.hidden);
 
                 // Display related articles
                 if (relatedArticles.length > 0) {
