@@ -171,6 +171,8 @@
             .then(data => {
                 // Sort articles by date in descending order
                data.sort((a, b) => new Date(b.date) - new Date(a.date));
+                // Hidden articles
+                const filteredArticles = articles.filter(article => !article.hidden);
                 
                 // Generate HTML for the articles
                 const articlesContainer = document.getElementById('article-container');
