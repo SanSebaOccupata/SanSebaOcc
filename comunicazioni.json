@@ -4,7 +4,8 @@
         "description": "AMO QUI VA IL TESTO MO VEDIAMO OKKKKKK",
         "image": "Images/IntenzioniPre.jpg",
         "date": "2025-03-08",
-        "link": "Articles/Intenti08.html"
+        "link": "Articles/Intenti08.html",
+        "hidden": true
     }
     ,
     {
@@ -12,8 +13,7 @@
         "description": "Ogni giorno ci sentiamo dire che alcuni luoghi possono essere attraversati, altri no; che alcune persone abbiano diritto a sostare, fermarsi, vivere in alcune zone, alcuni paesi, alcune città, ed altre no. Zone rosse, apartheid, divisioni geopolitiche sono solo delle metastasi di un più largo tumore, quello del confine, del limite, del recinto. In occasione dell'8 Marzo, ripensando e rielaborando sempre quest'ottica nei confronti della Palestina e del transfemminismo, è necessario porre domande su cosa sia un confine, un limite, e chi lo abbia deciso. Qui gli eventi di questi tre giorni di confronto, dialogo e elaborazione!",
         "image": "Images/GeneralEvents.JPG",
         "date": "2025-03-07",
-        "link": "Comunicazioni/SconfiniamociBdT.html",
-        "hidden": true
+        "link": "Comunicazioni/SconfiniamociBdT.html"
     }
     ,
     {
