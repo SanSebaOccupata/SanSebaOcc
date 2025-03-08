@@ -13,7 +13,8 @@
         "description": "Dichiarazione di intenti per l'08 Marzo",
         "date": "2025-03-08",
         "link": "Articles/Intenti08.html",
-        "keywords": ["8Marzo", "Palestin-a", "Donne", "Palestinesi", "Libertà"]
+        "keywords": ["8Marzo", "Palestin-a", "Donne", "Palestinesi", "Libertà"],
+        "hidden": true
     },
     {
         "title": "Eventi 09 Marzo",
@@ -25,7 +26,7 @@
     },
             {
         "title": "Eventi 08 Marzo",
-        "image": "Images/LottaDonna.jpg",
+        "image": "Images/08Marzo.jpg",
         "description": "Gli eventi in programma per l'08 Marzo",
         "date": "2025-03-08",
         "link": "Articles/08Marzo.html",
