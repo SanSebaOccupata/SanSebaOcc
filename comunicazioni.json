@@ -13,7 +13,7 @@
         "image": "Images/GeneralEvents.JPG",
         "date": "2025-03-07",
         "link": "Comunicazioni/SconfiniamociBdT.html",
-        "priority": true
+        "hidden": true
     }
     ,
     {
