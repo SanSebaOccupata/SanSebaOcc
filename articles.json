@@ -30,7 +30,8 @@
         "description": "Gli eventi in programma per l'08 Marzo",
         "date": "2025-03-08",
         "link": "Articles/08Marzo.html",
-        "keywords": ["8Marzo", "Palestin-a", "Donne", "Palestinesi", "Libertà"]
+        "keywords": ["8Marzo", "Palestin-a", "Donne", "Palestinesi", "Libertà"],
+        "priority": true
     },
         {
         "title": "Eventi 07 Marzo",
